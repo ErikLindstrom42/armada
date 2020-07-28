@@ -1,19 +1,19 @@
-.App {
+.Armada {
   text-align: center;
 }
 
-.App-logo {
+.Armada-logo {
   height: 40vmin;
   pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  .Armada-logo {
+    animation: Armada-logo-spin infinite 20s linear;
   }
 }
 
-.App-header {
+.Armada-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -24,11 +24,11 @@
   color: white;
 }
 
-.App-link {
+.Armada-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
+@keyframes Armada-logo-spin {
   from {
     transform: rotate(0deg);
   }
