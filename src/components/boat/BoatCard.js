@@ -7,8 +7,6 @@ const BoatCard = props => {
     //makes sure that userid is an integer
     const currentUser = parseInt(sessionStorage.getItem("activeUser"))
 
-    console.log(currentUser)
-    console.log(props.boat)
     if (props.boat.userId === currentUser) {
 
         return (
