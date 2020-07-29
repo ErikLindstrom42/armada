@@ -1,30 +1,42 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import BoatManager from '../../modules/BoatManager'
 
-const BoatForm = props => {
-    const [boat, setBoat] = useState({ make: "", model: "", modelYear: "", purchaseYear: "", propulsion: "Sail", image: "", userId: 0 })
+const BoatEditForm = props => {
+    const [boat, setBoat] = useState({ make: "", model: "", modelYear: "", purchaseYear: "", propulsion: "", image: "", userId: 0 })
     const [isLoading, setIsLoading] = useState(false)
-
     const handleFieldChange = evt => {
         const stateToChange = { ...boat }
         stateToChange[evt.target.id] = evt.target.value
         setBoat(stateToChange)
     }
 
-    const currentUserId = sessionStorage.getItem('activeUser')
-    boat.userId = parseInt(currentUserId)
-
-    const constructNewBoat = evt => {
+    const updatingExistingBoat = evt => {
         evt.preventDefault()
-        if (boat.make === "" || boat.model === "" || boat.modelYear === "" || boat.purchaseYear === "" || boat.image === "") {
-            window.alert("Please fill in all of the fields");
-        } else {
-            setIsLoading(true)
+        setIsLoading(true)
 
-            BoatManager.post(boat)
-                .then(() => props.history.push("/boats"))
+        const editedBoat = {
+            id: props.match.params.boatId,
+            make: boat.make,
+            model: boat.model,
+            modelYear: boat.modelYear,
+            purchaseYear: boat.purchaseYear,
+            propulsion: boat.propulsion,
+            image: boat.image,
+            userId: boat.userId
         }
+
+        BoatManager.update(editedBoat)
+            .then(() => props.history.push("/boats"))
+
     }
+
+    useEffect(() => {
+        BoatManager.get(props.match.params.boatId)
+            .then(boat => {
+                setBoat(boat)
+                setIsLoading(false)
+            })
+    }, [])
 
     return (
         <>
@@ -36,7 +48,7 @@ const BoatForm = props => {
                             required
                             onChange={handleFieldChange}
                             id="make"
-                            placeholder="Make"
+                            value={boat.make}
                         />
                         <label htmlFor="make">Make</label>
                         <input
@@ -44,7 +56,7 @@ const BoatForm = props => {
                             required
                             onChange={handleFieldChange}
                             id="model"
-                            placeholder="Model"
+                            value={boat.model}
                         />
                         <label htmlFor="model">Model</label>
 
@@ -53,7 +65,7 @@ const BoatForm = props => {
                             required
                             onChange={handleFieldChange}
                             id="modelYear"
-                            placeholder="Year Built"
+                            value={boat.modelYear}
                         />
                         <label htmlFor="modelYear">Year Built</label>
                         <input
@@ -61,10 +73,9 @@ const BoatForm = props => {
                             required
                             onChange={handleFieldChange}
                             id="purchaseYear"
-                            placeholder="Year Bought"
+                            value={boat.purchaseYear}
                         />
                         <label htmlFor="purchaseYear">Year Bought</label>
-
                         <select 
                         id="propulsion"
                             onChange={handleFieldChange}>
@@ -79,16 +90,21 @@ const BoatForm = props => {
                             required
                             onChange={handleFieldChange}
                             id="image"
-                            placeholder="Image URL"
+                            value={boat.image}
                         />
                         <label htmlFor="image">Image URL</label>
+                        <input
+                            type="hidden"
+                            id="userId"
+                            value={boat.userId}
+                        />
                     </div>
 
                     <div className="alignRight">
                         <button
                             type="button"
                             disabled={isLoading}
-                            onClick={constructNewBoat}
+                            onClick={updatingExistingBoat}
                         >Submit</button>
                     </div>
                 </fieldset>
@@ -99,5 +115,4 @@ const BoatForm = props => {
 
 }
 
-
-export default BoatForm
+export default BoatEditForm

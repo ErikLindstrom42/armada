@@ -18,44 +18,23 @@
   "boats": [
     {
       "id": 1,
-      "userId": 1,
       "make": "Northstar",
-      "model": "500",
+      "model": "501",
       "modelYear": "1970",
-      "purchaseYear": "1995",
-      "propulsion": "Paddle",
-      "image": "https://images.squarespace-cdn.com/content/v1/5bc258f0e5f7d17e4e005014/1552428149542-5T6EGB2MZ8DGV10XX10Y/ke17ZwdGBToddI8pDm48kBUDAxm-FLUF-OJf9moK1kV7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UT_TXfTUFcrrnRvtinoH4JYxq5g0UB9t65pVePltZrd1IKYY7Qu0iTZQJ-GJ4dsqLQ/northstar-25-electric-conversion-tennessee-full-view-helmsman-electric-drives.JPG"
-    },
-    {
-      "make": "Sitka",
-      "model": "16",
-      "modelYear": "1995",
       "purchaseYear": "2000",
-      "propulsion": "Paddle",
-      "image": "https://cdni.llbean.net/is/image/wim/510291_0_45?hei=196&wid=170&defaultImage=llbstage/A0211793_2",
-      "userId": 2,
-      "id": 2
-    },
-    {
-      "make": "Sitka",
-      "model": "16",
-      "modelYear": "1995",
-      "purchaseYear": "2000",
-      "propulsion": "Paddle",
-      "image": "https://cdni.llbean.net/is/image/wim/510291_0_45?hei=196&wid=170&defaultImage=llbstage/A0211793_2",
-      "userId": 2,
-      "id": 3
+      "propulsion": "Motor",
+      "image": "https://images.squarespace-cdn.com/content/v1/5bc258f0e5f7d17e4e005014/1552428149542-5T6EGB2MZ8DGV10XX10Y/ke17ZwdGBToddI8pDm48kBUDAxm-FLUF-OJf9moK1kV7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UT_TXfTUFcrrnRvtinoH4JYxq5g0UB9t65pVePltZrd1IKYY7Qu0iTZQJ-GJ4dsqLQ/northstar-25-electric-conversion-tennessee-full-view-helmsman-electric-drives.JPG",
+      "userId": 1
     }
   ],
   "trips": [
     {
       "id": 1,
-      "userId": 1,
-      "boatId": 1,
       "location": "Percy Priest Lake",
-      "tripName": "Sailing with friends",
+      "tripName": "Sailing with enemies",
       "date": "2020-07-20",
-      "image": "http://ppyc1910.org/wp-content/uploads/2016/03/J-Farr-pic-3.jpg"
+      "image": "http://ppyc1910.org/wp-content/uploads/2016/03/J-Farr-pic-3.jpg",
+      "userId": 1
     },
     {
       "id": 2,
@@ -65,15 +44,6 @@
       "tripName": "Sailing with friends",
       "date": "2020-07-20",
       "image": "http://ppyc1910.org/wp-content/uploads/2016/03/J-Farr-pic-3.jpg"
-    },
-    {
-      "location": "37205",
-      "boatId": "",
-      "tripName": "Fun",
-      "date": "6/14/2020",
-      "image": "https://cdni.llbean.net/is/image/wim/510291_0_45?hei=196&wid=170&defaultImage=llbstage/A0211793_2",
-      "userId": 2,
-      "id": 3
     }
   ]
 }
