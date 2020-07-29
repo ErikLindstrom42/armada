@@ -3,12 +3,14 @@ import React from "react";
 import Home from "./home/Home";
 import TripList from "./trip/TripList";
 import TripForm from './trip/TripForm';
-import TripEditForm from './trip/TripEditForm';
-import BoatList from "./event/BoatList";
-import BoatForm from './event/BoatForm';
-import BoatEditForm from './event/BoatEditForm';
+// import TripEditForm from './trip/TripEditForm';
+import BoatList from "./boat/BoatList";
+import BoatForm from './boat/BoatForm';
+// import BoatEditForm from './event/BoatEditForm';
 import UserList from "./auth/UserList"
 import UserEditForm from "./auth/UserEditForm"
+import Login from "./auth/Login";
+import Register from "./auth/Register"
 
 
 // Check if credentials are in session storage returns true/false
@@ -107,26 +109,26 @@ const ApplicationViews = (props) => {
       {/*************** BOATS ***************/}
       <Route
         exact
-        path="/events"
+        path="/boats"
         render={props => {
           return <BoatList {...props} />
         }} />
       
       <Route
-        path="/events/new"
+        path="/boats/new"
         render={(props) => {
           return <BoatForm {...props} />
         }} />
       
-      <Route
-        path="/events/:eventId(\d+)/edit"
+      {/* <Route
+        path="/boats/:boatId(\d+)/edit"
         render={props => {
           if (hasUser) {
             return <BoatEditForm {...props} />
           } else {
             return <Redirect to="/login" />
           }
-        }} />
+        }} /> */}
 
       {/*************** TRIPS ******************/}
       <Route
@@ -141,7 +143,7 @@ const ApplicationViews = (props) => {
         render={(props) => {
           return <TripForm {...props} />
         }} />
-
+{/* 
       <Route
         path="/trips/:tripId(\d+)/edit"
         render={props => {
@@ -151,7 +153,7 @@ const ApplicationViews = (props) => {
             return <Redirect to="/login" />
           }
         }} />
-
+ */}
         </React.Fragment>
     );
 }

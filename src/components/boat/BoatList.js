@@ -28,7 +28,7 @@ const BoatList = (props) => {
     // Finally we use map() to "loop over" the boats array to show a list of boat cards
     return (
         <>
-            
+
             <section className="section-content">
                 <button type="button"
                     className="btn"
@@ -38,19 +38,19 @@ const BoatList = (props) => {
             </section>
             <div className="container-cards">
                 {boats.map(boat => {
-                    if (boat.userId === parseInt(sessionStorage.getItem("activeUser"))) {
+                   
                         return (
                             <BoatCard
                                 key={boat.id}
                                 boat={boat}
                                 deleteBoat={deleteBoat}
-                                {...props} 
+                                {...props}
                             />
                         )
-                    }
+                    
                 })}
             </div>
-            
+
         </>
     );
 };

@@ -4,9 +4,9 @@ import "./TripCard.css"
 
 const TripCard = props => {
 
-//makes sure that userid is an integer
+    //makes sure that userid is an integer
     const currentUser = parseInt(sessionStorage.getItem("activeUser"))
-    if (props.trip.userId == currentUser) {
+    if (props.trip.userId === currentUser) {
 
         return (
 
@@ -19,8 +19,8 @@ const TripCard = props => {
                 </div>
                 <div className="tripTitle">
                     <h3>
-                        <a href={props.trip.url} alt={props.trip.title} target="_blank" rel="noopener noreferrer">{props.trip.title} </a>
-
+                        <img src={props.trip.image} alt={props.trip.location} style={{width: '250px'}}></img>
+                        <p>{props.trip.tripName}</p>
                     </h3>
                 </div>
                 <div className="trip__description">
@@ -28,10 +28,10 @@ const TripCard = props => {
                 </div>
                 <div className="trip__deleteButton">
 
-                        <button type="button" onClick={() => props.deleteTrip(props.trip.id)}>Delete</button>
-                    </div>
+                    <button type="button" onClick={() => props.deleteTrip(props.trip.id)}>Delete</button>
+                </div>
             </div>
-            
+
 
         )
     }
