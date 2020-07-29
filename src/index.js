@@ -2,11 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import Armada from './components/Armada';
-import { Router } from 'react-router-dom';
+import ArmadaPic from './components/ArmadaPic';
+import { BrowserRouter as Router} from 'react-router-dom';
+
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Router>
     <Armada />
-  </React.StrictMode>,
+  </Router>,
   document.getElementById('root')
 );
