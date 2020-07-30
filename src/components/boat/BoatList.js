@@ -4,6 +4,7 @@ import BoatCard from './BoatCard';
 import BoatManager from '../../modules/BoatManager';
 import BoatDetail from './BoatDetail'
 
+sessionStorage.setItem("filter", "props")
 const BoatList = (props) => {
     // The initial state is an empty array
     const [boats, setBoats] = useState([]);
@@ -25,11 +26,21 @@ const BoatList = (props) => {
         BoatManager.delete(id)
             .then(() => BoatManager.getAll().then(setBoats));
     };
+    
 
     // Finally we use map() to "loop over" the boats array to show a list of boat cards
     return (
         <>
+            <select
+                id="propulsion"
+                // onChange={handleFieldChange}
+                >
+                <option value="Sail">Sail</option>
+                <option value="Paddle">Paddle</option>
+                <option value="Motor">Motor</option>
+            </select>
 
+            
             <section className="section-content">
                 <button type="button"
                     className="btn"
@@ -40,15 +51,15 @@ const BoatList = (props) => {
             <div className="container-cards">
                 {boats.map(boat => {
 
-                    return ( 
+                    return (
                         <BoatCard
                             key={boat.id}
                             boat={boat}
                             deleteBoat={deleteBoat}
                             {...props}
                         />
-                        
-                        )
+
+                    )
 
                 })}
             </div>

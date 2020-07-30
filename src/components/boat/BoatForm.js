@@ -1,9 +1,37 @@
 import React, { useState } from 'react';
 import BoatManager from '../../modules/BoatManager'
 
+
 const BoatForm = props => {
-    const [boat, setBoat] = useState({ make: "", model: "", modelYear: 0, purchaseYear: "", propulsion: "Sail", image: "", userId: 0 })
+    const [boat, setBoat] = useState({ make: "", model: "", modelYear: "", purchaseYear: "", propulsion: "Sail", image: "", userId: 0 })
     const [isLoading, setIsLoading] = useState(false)
+
+    const [image, setImage] = useState('')
+    const [loading, setLoading] = useState(false)
+
+    const uploadImage = async e => {
+        const files = e.target.files
+        const data = new FormData()
+        data.append('file', files[0])
+        data.append('upload_preset', 'darwin')
+        setLoading(true)
+        const res = await fetch(
+            '	https://api.cloudinary.com/v1_1/dfpncq7pk/image/upload',
+            {
+                method: 'POST',
+                body: data
+            }
+        )
+
+        const file = await res.json()
+
+        setImage(file.secure_url)
+        setLoading(false)
+        boat.image=file.secure_url
+    }
+
+
+
 
     const handleFieldChange = evt => {
         const stateToChange = { ...boat }
@@ -66,23 +94,41 @@ const BoatForm = props => {
                         />
                         <label htmlFor="purchaseYear">Year Bought</label>
 
-                        <select 
-                        id="propulsion"
+                        <select
+                            id="propulsion"
                             onChange={handleFieldChange}>
                             <option value="Sail">Sail</option>
                             <option value="Paddle">Paddle</option>
                             <option value="Motor">Motor</option>
                         </select>
-                        
+
                         <label htmlFor="propulsion">Propulsion Type</label>
-                        <input
+                        {/* <input
                             type="text"
                             required
                             onChange={handleFieldChange}
                             id="image"
                             placeholder="Image URL"
                         />
-                        <label htmlFor="image">Image URL</label>
+                        <label htmlFor="image">Image URL</label> */}
+                        <div className="pic___upload">
+
+                            <h1>Upload Image</h1>
+                            <input type="file"
+                                name="file"
+                                id="image"
+                                placeholder="Upload an image"
+                                onChange={uploadImage}
+                            />
+                            {loading ? (
+                                <h3>Loading...</h3>
+                            ) : (
+                                    <img src={image} style={{ width: '300px' }} />
+                                )
+
+                            }
+                        </div>
+
                     </div>
 
                     <div className="alignRight">

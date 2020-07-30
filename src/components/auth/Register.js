@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import UserManager from "./../../modules/UserManager"
 
 const Register = props => {
-  const [credentials, setCredentials] = useState({ email: "", password: "", user: "", img: "https://www.kindpng.com/picc/m/24-248253_user-profile-default-image-png-clipart-png-download.png" });
+  const [credentials, setCredentials] = useState({ email: "", password: "", user: "", checkPassword: ""});
 
   // Update state whenever an input field is edited
   const handleFieldChange = (evt) => {
@@ -15,9 +15,14 @@ const Register = props => {
 
 const handleRegister = evt => {
   evt.preventDefault();
-  if (credentials.title === "" || credentials.url === "" || credentials.synopsis === "") {
+  if (credentials.user === "" || credentials.email === "" || credentials.password === "" || credentials.checkPassword === "") {
     window.alert("Please input a username, password, and email");
-  } else {
+  }
+
+    else if (credentials.password !== credentials.checkPassword) {
+      window.alert("Passwords do not match")
+    }
+   else {
     
     
     // Create the credentials and redirect user to credentials list
@@ -50,7 +55,13 @@ const handleRegister = evt => {
               id="password"
               placeholder="Password"
               required="" />
-            <label htmlFor="inputPassword">Password</label>
+            <label htmlFor="password">Password</label>
+
+            <input onChange={handleFieldChange} type="password"
+              id="checkPassword"
+              placeholder="Re-type Password"
+              required="" />
+            <label htmlFor="checkPassword">Re-type Password</label>
 
             <input onChange={handleFieldChange} type="userName"
               id="user"
