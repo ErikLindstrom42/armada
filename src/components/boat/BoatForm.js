@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import BoatManager from '../../modules/BoatManager'
 
 const BoatForm = props => {
-    const [boat, setBoat] = useState({ make: "", model: "", modelYear: "", purchaseYear: "", propulsion: "Sail", image: "", userId: 0 })
+    const [boat, setBoat] = useState({ make: "", model: "", modelYear: 0, purchaseYear: "", propulsion: "Sail", image: "", userId: 0 })
     const [isLoading, setIsLoading] = useState(false)
 
     const handleFieldChange = evt => {
@@ -20,6 +20,7 @@ const BoatForm = props => {
             window.alert("Please fill in all of the fields");
         } else {
             setIsLoading(true)
+            boat.modelYear = parseInt(boat.modelYear)
 
             BoatManager.post(boat)
                 .then(() => props.history.push("/boats"))

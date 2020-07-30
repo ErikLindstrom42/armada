@@ -26,7 +26,7 @@ function Armada() {
       <div className="Armada">
       <NavBar hasUser={hasUser} clearUser={clearUser} />
       <ApplicationViews hasUser={hasUser} setUser={setUser} />
-
+{/* 
         <header className="Armada-header">
           <img src={logo} className="Armada-logo" alt="logo" />
           <p>
@@ -40,7 +40,7 @@ function Armada() {
           >
             Learn React
         </a>
-        </header>
+        </header> */}
       </div>
     </>
   );

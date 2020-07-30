@@ -1,5 +1,6 @@
 import React from "react";
 import "./BoatCard.css"
+import { Link } from "react-router-dom"
 
 
 const BoatCard = props => {
@@ -20,25 +21,26 @@ const BoatCard = props => {
                     <h3>
                         <img src={props.boat.image} alt={props.boat.model} style={{ width: '250px' }}></img>
                         <p>{props.boat.make} {props.boat.model}</p>
-                        {/* <a href={props.boat.image} alt={props.boat.model} target="_blank" rel="noopener noreferrer">{props.boat.title} </a> */}
+                        
 
                     </h3>
                 </div>
                 <div className="boat__description">
-                    <p>{props.boat.synopsis}</p>
+                    
                 </div>
                 <div className="boat__deleteButton">
 
-                    <button type="button" onClick={() => props.deleteBoat(props.boat.id)}>Delete</button>
+                    
+                    <Link to={`boats/${props.boat.id}`}><button>Details</button></Link>
                 </div>
             </div>
 
 
         )
     }
-     else {
+    else {
         return null
-     }
+    }
 
 };
 

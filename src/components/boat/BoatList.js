@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 //import the components we will need
 import BoatCard from './BoatCard';
 import BoatManager from '../../modules/BoatManager';
+import BoatDetail from './BoatDetail'
 
 const BoatList = (props) => {
     // The initial state is an empty array
@@ -38,16 +39,17 @@ const BoatList = (props) => {
             </section>
             <div className="container-cards">
                 {boats.map(boat => {
-                   
-                        return (
-                            <BoatCard
-                                key={boat.id}
-                                boat={boat}
-                                deleteBoat={deleteBoat}
-                                {...props}
-                            />
+
+                    return ( 
+                        <BoatCard
+                            key={boat.id}
+                            boat={boat}
+                            deleteBoat={deleteBoat}
+                            {...props}
+                        />
+                        
                         )
-                    
+
                 })}
             </div>
 
