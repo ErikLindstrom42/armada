@@ -31,7 +31,7 @@ function ArmadaPic() {
   }
 
   return (
-    <div className="Armada">
+    <div className="pic___upload">
 
       <h1>Upload Image</h1>
       <input type="file"
@@ -46,20 +46,6 @@ function ArmadaPic() {
       )
       
       }
-      {/* <header className="Armada-header">
-        <img src={logo} className="Armada-logo" alt="logo" />
-        <p>
-          Edit <code>src/Armada.js</code> and save to reload.
-        </p>
-        <a
-          className="Armada-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
     </div>
   );
 }
