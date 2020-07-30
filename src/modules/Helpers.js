@@ -2,16 +2,17 @@
 
 export function firstLetterCase(str) {
     return (str.charAt(0).toUpperCase() + str.slice(1));
- }
- 
- export function splitTypeArray(arr){
-     return arr.join(" and ");
- }
+}
+
+export function splitTypeArray(arr) {
+    return arr.join(" and ");
+}
 
 
 //  const [loading, setLoading] = useState(false)
 //  const [image, setImage] = useState('')
- export function uploadImage()  {async e => {
+export function uploadImage() {
+    async e => {
         const files = e.target.files
         const data = new FormData()
         data.append('file', files[0])
@@ -29,6 +30,6 @@ export function firstLetterCase(str) {
 
         setImage(file.secure_url)
         setLoading(false)
-        return(file)
+        return (file)
     }
 }

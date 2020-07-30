@@ -7,8 +7,10 @@ const BoatCard = props => {
 
     //makes sure that userid is an integer
     const currentUser = parseInt(sessionStorage.getItem("activeUser"))
+    const filterByPropulsion = sessionStorage.getItem("filter")
 
     if (props.boat.userId === currentUser) {
+        if(props.boat.propulsion == filterByPropulsion || filterByPropulsion === null || filterByPropulsion === "")
 
         return (
 
@@ -37,6 +39,7 @@ const BoatCard = props => {
 
 
         )
+        else return null
     }
     else {
         return null

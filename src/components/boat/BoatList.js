@@ -4,7 +4,7 @@ import BoatCard from './BoatCard';
 import BoatManager from '../../modules/BoatManager';
 import BoatDetail from './BoatDetail'
 
-sessionStorage.setItem("filter", "props")
+
 const BoatList = (props) => {
     // The initial state is an empty array
     const [boats, setBoats] = useState([]);
@@ -27,14 +27,19 @@ const BoatList = (props) => {
             .then(() => BoatManager.getAll().then(setBoats));
     };
     
+    const filterBoats = evt => {
+        sessionStorage.setItem("filter", evt.target.value)
+        BoatManager.getAll().then(setBoats);
+    }
 
     // Finally we use map() to "loop over" the boats array to show a list of boat cards
     return (
         <>
             <select
                 id="propulsion"
-                // onChange={handleFieldChange}
+                onChange={filterBoats}
                 >
+                <option value="">All</option>
                 <option value="Sail">Sail</option>
                 <option value="Paddle">Paddle</option>
                 <option value="Motor">Motor</option>
