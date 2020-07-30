@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import BoatManager from '../../modules/BoatManager'
 
+
 const BoatForm = props => {
-    const [boat, setBoat] = useState({ make: "", model: "", modelYear: 0, purchaseYear: "", propulsion: "Sail", image: "", userId: 0 })
+    const [boat, setBoat] = useState({ make: "", model: "", modelYear: "", purchaseYear: "", propulsion: "Sail", image: "", userId: 0 })
     const [isLoading, setIsLoading] = useState(false)
 
     const [image, setImage] = useState('')
@@ -26,11 +27,9 @@ const BoatForm = props => {
 
         setImage(file.secure_url)
         setLoading(false)
-        console.log(file.secure_url)
         boat.image=file.secure_url
-
-
     }
+
 
 
 

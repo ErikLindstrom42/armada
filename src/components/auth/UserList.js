@@ -21,17 +21,17 @@ const UserList = (props) => {
 
   // Finally we use map() to "loop over" the users array to show a list of animal cards
   return (
-      <div>
-    <div className="container-cards">
-      
-      <UserCard 
-      key={user.id}
-      user={user}
-      name={user.name}
-      id={user.id}
-      {...props} 
-       />
-    </div>
+    <div>
+      <div className="container-cards">
+
+        <UserCard
+          key={user.id}
+          user={user}
+          name={user.name}
+          id={user.id}
+          {...props}
+        />
+      </div>
     </div>
   );
 };
