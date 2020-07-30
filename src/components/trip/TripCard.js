@@ -1,5 +1,6 @@
 import React from "react";
 import "./TripCard.css"
+import {Link} from 'react-router-dom'
 
 
 const TripCard = props => {
@@ -27,8 +28,8 @@ const TripCard = props => {
                     <p>{props.trip.synopsis}</p>
                 </div>
                 <div className="trip__deleteButton">
-
-                    <button type="button" onClick={() => props.deleteTrip(props.trip.id)}>Delete</button>
+                <Link to={`trips/${props.trip.id}`}><button>Details</button></Link>
+                    
                 </div>
             </div>
 
