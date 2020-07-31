@@ -5,9 +5,7 @@ import MaintenanceList from '../maintenance/MaintenanceList'
 
 const BoatDetail = props => {
 
-
     const [boat, setBoat] = useState({})
-
 
     useEffect(() => {
         BoatManager.get(props.match.params.boatId)
@@ -30,13 +28,13 @@ const BoatDetail = props => {
                 <button>Edit</button>
             </Link>
             <button type="button" onClick={() => deleteBoat(boat.id)}>Delete</button>
-
-
-
+            <MaintenanceList
+            key = {boat.id}
+            boat = {boat}
+            {...props}
+            />
         </>
     );
-
-
 }
 
 export default BoatDetail

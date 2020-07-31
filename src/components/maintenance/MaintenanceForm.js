@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import MaintenanceManager from '../../modules/MaintenanceManager'
+import MaintenanceList from './MaintenanceList'
 
 const MaintenanceForm = props => {
-    const [maintenance, setMaintenance] = useState({ location: "", boatId: "", maintenanceName: "", date: "", image: "", userId: 0 })
+    const [maintenance, setMaintenance] = useState({ action: "", boatId: "", actionNotes: "", date: "", })
     const [isLoading, setIsLoading] = useState(false)
 
     const handleFieldChange = evt => {
@@ -10,59 +11,57 @@ const MaintenanceForm = props => {
         stateToChange[evt.target.id] = evt.target.value
         setMaintenance(stateToChange)
     }
+    
 
-    const currentUserId = sessionStorage.getItem('activeUser')
-    maintenance.userId = parseInt(currentUserId)
+    maintenance.boatId = props.boat.id
 
     const constructNewMaintenance = evt => {
         evt.preventDefault()
-        if (maintenance.location === "" || maintenance.maintenanceName === "" || maintenance.date === "" || maintenance.image === "") {
+        if (maintenance.action === "" || maintenance.actionNotes === "" || maintenance.date === "") {
             window.alert("Please fill in all of the fields");
         } else {
-            setIsLoading(true)
+
 
             MaintenanceManager.post(maintenance)
-                .then(() => props.history.push("/maintenances"))
+                .then(() => {
+                    props.getMaintenances()
+                    document.getElementById("maintenanceForm").reset();
+                })
+
+
         }
     }
 
     return (
         <>
-            <form>
+            <form id = "maintenanceForm">
                 <fieldset>
                     <div className="formgrid">
+                        <label htmlFor="action">Maintenance Performed</label>
                         <input
                             type="text"
                             required
                             onChange={handleFieldChange}
-                            id="location"
-                            placeholder="Location"
+                            id="action"
+                            placeholder="changed oil etc..."
                         />
-                        <label htmlFor="location">Location</label>
+                        <label htmlFor="actionNotes">Details</label>
                         <input
                             type="text"
                             required
                             onChange={handleFieldChange}
-                            id="maintenanceName"
-                            placeholder="Adventure Name"
+                            id="actionNotes"
+                            placeholder="Details"
                         />
-                        <label htmlFor="maintenanceName">Adventure Name</label>             
+                        <label htmlFor="date">Date</label>
                         <input
-                            type="text"
+                            type="date"
                             required
                             onChange={handleFieldChange}
                             id="date"
                             placeholder="Date"
                         />
-                        <label htmlFor="date">Date</label>
-                        <input
-                            type="text"
-                            required
-                            onChange={handleFieldChange}
-                            id="image"
-                            placeholder="Image URL"
-                        />
-                        <label htmlFor="image">Image URL</label>
+
                     </div>
 
                     <div className="alignRight">

@@ -16,5 +16,8 @@ export default {
             },
             body: JSON.stringify(newMaintenance)
         }).then(data => data.json())
+    },
+    getMaintenanceById(id) {
+        return fetch(`${remoteURL}/maintenances?boatId=${id}&_expand=boat`).then(result => result.json())
     }
 }
