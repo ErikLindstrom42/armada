@@ -31,7 +31,7 @@ const BoatForm = props => {
     }
 
 
-
+let newBoatId
 
     const handleFieldChange = evt => {
         const stateToChange = { ...boat }
@@ -51,7 +51,12 @@ const BoatForm = props => {
             boat.modelYear = parseInt(boat.modelYear)
 
             BoatManager.post(boat)
-                .then(() => props.history.push("/boats"))
+                .then((response) => {
+                    props.history.push("/boats") 
+                    //Below is to pull ID from response as sample for future projects
+                    newBoatId= response.id
+                    console.log(newBoatId)
+                }  )
         }
     }
 

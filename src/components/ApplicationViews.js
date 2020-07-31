@@ -10,7 +10,8 @@ import BoatForm from './boat/BoatForm';
 import BoatEditForm from './boat/BoatEditForm';
 import BoatDetail from './boat/BoatDetail'
 import UserList from "./auth/UserList"
-import UserEditForm from "./auth/UserEditForm"
+import MaintenanceList from './maintenance/MaintenanceList'
+import MaintenanceForm from './maintenance/MaintenanceForm'
 import Login from "./auth/Login";
 import Register from "./auth/Register"
 
@@ -45,71 +46,7 @@ const ApplicationViews = (props) => {
         render={props => {
           return <UserList {...props} />
         }} />
-      {/* <Route
-        path="/users/:userId(\d+)/edit"
-        render={props => {
-          if (hasUser) {
-            return <UserEditForm {...props} />
-          } else {
-            return <Redirect to="/home" />
-          }
-        }} />
-      <Route
-        path="/home"
-        render={props => {
-          return <FriendList {...props} />;
-        }} /> */}
-      {/* <Route
-            path="/friends/new"
-            render={(props) => {
-                return <FriendForm {...props} />
-            }} />
 
-      <Route
-        exact path="/home"
-        render={props => {
-          if (hasUser) {
-            return <MessageList {...props}
-            />
-          }
-          else {
-            return <Redirect to="/home" />
-          }
-        }} />
-
-      <Route
-        path="/messages/:messageId(\d+)/edit"
-        render={props => {
-          if (hasUser) {
-            return <MessageEditForm {...props}
-            />
-          }
-          else {
-            return <Redirect to="/home" />
-          }
-        }} />
-
-
- */}
-
-      {/*************** ARTICLES ***************/}
-      {/* <Route
-            exact
-            path="/articles"
-            render={props => {
-                if (hasUser) {
-                    return <ArticleList {...props}/>;//Home here is a placeholder value. 
-                    //You would need to inserts and import articles once built
-                } else {
-                    return <Redirect to="/login" />
-                }
-            }} />
-        <Route
-            path="/articles/new"
-            render={(props) => {
-                return <ArticleForm {...props} />
-            }} />
- */}
       {/*************** BOATS ***************/}
       <Route
         exact
@@ -164,6 +101,20 @@ const ApplicationViews = (props) => {
         path="/trips/:tripId(\d+)"
         render={props => {
           return <TripDetail {...props} />
+        }} />
+
+      {/*************** MAINTENANCE ******************/}
+      <Route
+        exact
+        path="/maintenances"
+        render={props => {
+          return <MaintenanceList {...props} />
+        }} />
+
+<Route
+        path="/maintenances/new"
+        render={(props) => {
+          return <MaintenanceForm {...props} />
         }} />
 
     </React.Fragment>
