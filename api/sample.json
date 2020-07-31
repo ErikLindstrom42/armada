@@ -29,5 +29,16 @@
             "date": "2020-07-20",
             "image": "http://ppyc1910.org/wp-content/uploads/2016/03/J-Farr-pic-3.jpg"
         }
+    ],
+    "maintenanceActions": [
+      {
+        "id":1,
+        "boatId":1,
+        "action":"Changed oil",
+        "actionNotes": "Refilled w/ 3 qts",
+        "date": "2020-07-20"
+      }
     ]
-}
+  }
+  
+  

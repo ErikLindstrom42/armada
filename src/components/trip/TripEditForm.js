@@ -57,14 +57,16 @@ const TripEditForm = props => {
                             value={trip.tripName}
                         />
                         <label htmlFor="tripName">Adventure Name</label>
-                        <input
-                            type="text"
-                            required
-                            onChange={handleFieldChange}
-                            id="date"
-                            value={trip.date}
-                        />
+     
                         <label htmlFor="date">Date</label>
+                        <input
+                            type="date"
+                            id="date"
+                            required
+                            onChange={handleFieldChange} 
+                            value={trip.date}
+                            />
+                        <label htmlFor="image">Image URL</label>
                         <input
                             type="text"
                             required

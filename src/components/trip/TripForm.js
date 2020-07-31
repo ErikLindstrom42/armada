@@ -31,6 +31,7 @@ const TripForm = props => {
             <form>
                 <fieldset>
                     <div className="formgrid">
+                        <label htmlFor="location">Location</label>
                         <input
                             type="text"
                             required
@@ -38,7 +39,7 @@ const TripForm = props => {
                             id="location"
                             placeholder="Location"
                         />
-                        <label htmlFor="location">Location</label>
+                        <label htmlFor="tripName">Adventure Name</label>
                         <input
                             type="text"
                             required
@@ -46,15 +47,20 @@ const TripForm = props => {
                             id="tripName"
                             placeholder="Adventure Name"
                         />
-                        <label htmlFor="tripName">Adventure Name</label>             
-                        <input
+                        {/* <input
                             type="text"
                             required
                             onChange={handleFieldChange}
                             id="date"
                             placeholder="Date"
                         />
+                        <label htmlFor="date">Date</label> */}
                         <label htmlFor="date">Date</label>
+                        <input
+                            type="date"
+                            id="date"
+                            onChange={handleFieldChange} />
+                        <label htmlFor="image">Image URL</label>
                         <input
                             type="text"
                             required
@@ -62,7 +68,6 @@ const TripForm = props => {
                             id="image"
                             placeholder="Image URL"
                         />
-                        <label htmlFor="image">Image URL</label>
                     </div>
 
                     <div className="alignRight">
