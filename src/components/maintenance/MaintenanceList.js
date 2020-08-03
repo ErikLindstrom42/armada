@@ -32,7 +32,9 @@ const MaintenanceList = (props) => {
                         {...props}
                         getMaintenances={getMaintenances}
                     />
+                    <p></p>
                 </div>
+                
                 {maintenances.map(maintenance =>
 
                     <MaintenanceCard

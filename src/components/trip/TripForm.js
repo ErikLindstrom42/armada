@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import TripManager from '../../modules/TripManager'
 
 const TripForm = props => {
-    const [trip, setTrip] = useState({ location: "", boatId: "", tripName: "", date: "", image: "", userId: 0 })
+    const [trip, setTrip] = useState({ location: "", boatId: 1, tripName: "", date: "", image: "", userId: 0 })
     const [isLoading, setIsLoading] = useState(false)
 
 

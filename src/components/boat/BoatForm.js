@@ -139,7 +139,7 @@ let newBoatId
                     <div className="alignRight">
                         <button
                             type="button"
-                            disabled={isLoading}
+                            disabled={loading}
                             onClick={constructNewBoat}
                         >Submit</button>
                     </div>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 //import the components we will need
 import BoatCard from './BoatCard';
 import BoatManager from '../../modules/BoatManager';
-import BoatDetail from './BoatDetail'
+import './Boat.css'
 
 
 const BoatList = (props) => {

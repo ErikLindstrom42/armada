@@ -1,6 +1,8 @@
 import React from "react";
-import "./BoatCard.css"
+import "./Boat.css"
 import { Link } from "react-router-dom"
+import { Button } from 'react-bootstrap'
+
 
 
 const BoatCard = props => {
@@ -10,35 +12,34 @@ const BoatCard = props => {
     const filterByPropulsion = sessionStorage.getItem("filter")
 
     if (props.boat.userId === currentUser) {
-        if(props.boat.propulsion == filterByPropulsion || filterByPropulsion === null || filterByPropulsion === "")
+        if (props.boat.propulsion == filterByPropulsion || filterByPropulsion === null || filterByPropulsion === "")
 
-        return (
+            return (
 
-            <div className="card">
-                <div className="card-content">
+                <div className="card">
+                    <div className="card-content">
 
 
-                </div>
-                <div className="boatTitle">
-                    <h3>
-                        <img src={props.boat.image} alt={props.boat.model} style={{ width: '250px' }}></img>
-                        <p>{props.boat.make} {props.boat.model}</p>
-                        
+                    </div>
+                    <div className="boatImage">
+                            <img src={props.boat.image} alt={props.boat.model} style={{ width: '250px' }}></img>
+                            </div>
+                    <div className="boatTitle">
+                        <h3>
+                            <p>{props.boat.make} {props.boat.model}</p>
+                        </h3>
+                    </div>
+                    
+                    <div>
 
-                    </h3>
-                </div>
-                <div className="boat__description">
+
+                        <Link to={`boats/${props.boat.id}`}><button id="boatDetailsButton">Details</button> {' '}</Link>
+                    </div>
                     
                 </div>
-                <div className="boat__deleteButton">
-
-                    
-                    <Link to={`boats/${props.boat.id}`}><button>Details</button></Link>
-                </div>
-            </div>
 
 
-        )
+            )
         else return null
     }
     else {
