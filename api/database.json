@@ -24,9 +24,9 @@
       "modelYear": 1995,
       "purchaseYear": "2000",
       "propulsion": "Paddle",
-      "image": "https://res.cloudinary.com/dfpncq7pk/image/upload/v1596128719/armada/q6wj8hcquh1ilszdpd6d.jpg",
+      "image": "https://res.cloudinary.com/dfpncq7pk/image/upload/v1596481075/armada/fxw307dirhtdtecivemm.jpg",
       "userId": 1,
-      "id": 2
+      "id": 4
     },
     {
       "make": "Sitka",
@@ -34,9 +34,29 @@
       "modelYear": 1995,
       "purchaseYear": "2000",
       "propulsion": "Sail",
-      "image": "https://res.cloudinary.com/dfpncq7pk/image/upload/v1596133151/armada/ho5ujepxcdzjqctddc1p.jpg",
+      "image": "https://res.cloudinary.com/dfpncq7pk/image/upload/v1596486630/armada/ammzov2krapi2hzocc9y.jpg",
       "userId": 1,
-      "id": 3
+      "id": 5
+    },
+    {
+      "make": "Sitka",
+      "model": "501",
+      "modelYear": 1995,
+      "purchaseYear": "2000",
+      "propulsion": "Paddle",
+      "image": "https://res.cloudinary.com/dfpncq7pk/image/upload/v1596487722/armada/byga0xko0hnugiihbgbp.svg",
+      "userId": 1,
+      "id": 6
+    },
+    {
+      "make": "Sitka",
+      "model": "16",
+      "modelYear": 1995,
+      "purchaseYear": "2000",
+      "propulsion": "Motor",
+      "image": "https://res.cloudinary.com/dfpncq7pk/image/upload/v1596553196/armada/sazyk291syeosqgonznt.jpg",
+      "userId": 1,
+      "id": 7
     }
   ],
   "trips": [
@@ -47,6 +67,15 @@
       "date": "2020-07-13",
       "image": "http://ppyc1910.org/wp-content/uploads/2016/03/J-Farr-pic-3.jpg",
       "userId": 1
+    },
+    {
+      "location": "37205",
+      "boatId": 1,
+      "tripName": "Fun",
+      "date": "2020-08-20",
+      "image": "https://res.cloudinary.com/dfpncq7pk/image/upload/v1596553230/armada/rxewdk94zkzakh4ehhvx.png",
+      "userId": 1,
+      "id": 2
     }
   ],
   "maintenances": [
@@ -56,20 +85,6 @@
       "action": "Changed oil",
       "actionNotes": "Refilled w/ 3 qts",
       "date": "2020-01-20"
-    },
-    {
-      "id": 2,
-      "boatId": 2,
-      "action": "Changed oil",
-      "actionNotes": "Refilled w/ 4 qts",
-      "date": "2020-02-20"
-    },
-    {
-      "id": 3,
-      "boatId": 3,
-      "action": "Changed oil",
-      "actionNotes": "Refilled w/ 5 qts",
-      "date": "2020-03-20"
     },
     {
       "action": "asdf",
@@ -91,6 +106,13 @@
       "actionNotes": "fdsa",
       "date": "2020-06-29",
       "id": 6
+    },
+    {
+      "action": "asdf",
+      "boatId": 4,
+      "actionNotes": "fdsa",
+      "date": "2020-08-18",
+      "id": 7
     }
   ]
 }

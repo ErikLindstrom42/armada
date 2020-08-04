@@ -25,7 +25,7 @@ const Login = props => {
             sessionStorage.setItem("credentials", JSON.stringify(credentials))
             sessionStorage.setItem("activeUser", user.id)
             props.setUser(credentials)
-            props.history.push("/home")
+            props.history.push("/boats")
           }
           
 

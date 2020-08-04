@@ -10,6 +10,9 @@ const BoatEditForm = props => {
         setBoat(stateToChange)
     }
 
+
+
+
     const updatingExistingBoat = evt => {
         evt.preventDefault()
         setIsLoading(true)
@@ -78,6 +81,7 @@ const BoatEditForm = props => {
                         <label htmlFor="purchaseYear">Year Bought</label>
                         <select 
                         id="propulsion"
+                        value ={boat.propulsion}
                             onChange={handleFieldChange}>
                             <option value="Sail">Sail</option>
                             <option value="Paddle">Paddle</option>

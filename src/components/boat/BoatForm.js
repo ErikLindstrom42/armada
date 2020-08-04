@@ -4,7 +4,6 @@ import BoatManager from '../../modules/BoatManager'
 
 const BoatForm = props => {
     const [boat, setBoat] = useState({ make: "", model: "", modelYear: "", purchaseYear: "", propulsion: "Sail", image: "", userId: 0 })
-    const [isLoading, setIsLoading] = useState(false)
 
     const [image, setImage] = useState('')
     const [loading, setLoading] = useState(false)
@@ -47,7 +46,7 @@ let newBoatId
         if (boat.make === "" || boat.model === "" || boat.modelYear === "" || boat.purchaseYear === "" || boat.image === "") {
             window.alert("Please fill in all of the fields");
         } else {
-            setIsLoading(true)
+            setLoading(true)
             boat.modelYear = parseInt(boat.modelYear)
 
             BoatManager.post(boat)
@@ -116,7 +115,7 @@ let newBoatId
                             placeholder="Image URL"
                         />
                         <label htmlFor="image">Image URL</label> */}
-                        <div className="pic___upload">
+                        <div className="picUpload">
 
                             <h1>Upload Image</h1>
                             <input type="file"
@@ -139,7 +138,7 @@ let newBoatId
                     <div className="alignRight">
                         <button
                             type="button"
-                            disabled={isLoading}
+                            disabled={loading}
                             onClick={constructNewBoat}
                         >Submit</button>
                     </div>

@@ -1,6 +1,6 @@
 import React from "react";
-import "./TripCard.css"
-import {Link} from 'react-router-dom'
+import "./Trip.css"
+import { Link } from 'react-router-dom'
 
 
 const TripCard = props => {
@@ -18,18 +18,18 @@ const TripCard = props => {
                     </div>
 
                 </div>
-                <div className="tripTitle">
+                <div className="tripImage">
                     <h3>
-                        <img src={props.trip.image} alt={props.trip.location} style={{width: '250px'}}></img>
-                        <p>{props.trip.tripName}</p>
+                        <img src={props.trip.image} alt={props.trip.location} style={{ width: '250px' }}></img>
                     </h3>
                 </div>
+                <p>{props.trip.tripName}</p>
                 <div className="trip__description">
                     <p>{props.trip.synopsis}</p>
                 </div>
-                <div className="trip__deleteButton">
-                <Link to={`trips/${props.trip.id}`}><button>Details</button></Link>
-                    
+                <div>
+                    <Link to={`trips/${props.trip.id}`}><button id="tripDetailsButton">Details</button></Link>
+
                 </div>
             </div>
 
