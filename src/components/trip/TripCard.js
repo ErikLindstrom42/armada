@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Trip.css"
 import { Link } from 'react-router-dom'
-import BoatManager from '../../modules/BoatManager'
+
 
 
 const TripCard = props => {
+
+
+
+
 
     //makes sure that userid is an integer
     const currentUser = parseInt(sessionStorage.getItem("activeUser"))
@@ -32,6 +36,7 @@ const TripCard = props => {
                     <Link to={`trips/${props.trip.id}`}><button id="tripDetailsButton">Details</button></Link>
 
                 </div>
+             
             </div>
 
 
