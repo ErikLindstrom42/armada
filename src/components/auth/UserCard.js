@@ -1,5 +1,8 @@
 import React from "react";
 import  "./UserCard.css"
+import UserManager from '../../modules/UserManager'
+
+//const userName = UserManager.getUser(sessionStorage.getItem("activeUser").user)
 
 const UserCard = props => {
   return (

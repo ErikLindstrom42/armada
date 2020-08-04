@@ -1,6 +1,7 @@
 import React from "react";
 import "./Trip.css"
 import { Link } from 'react-router-dom'
+import BoatManager from '../../modules/BoatManager'
 
 
 const TripCard = props => {
