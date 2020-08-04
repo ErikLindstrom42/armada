@@ -29,5 +29,8 @@ export default {
             },
             body: JSON.stringify(editedBoat)
         }).then(data => data.json());
+    },
+    filterPropulsion(propulsion) {
+        return fetch(`${remoteURL}/boats?propulsion=${propulsion}`).then(result =>result.json())
     }
 }

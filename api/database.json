@@ -66,16 +66,18 @@
       "tripName": "Sailing with enemies",
       "date": "2020-07-13",
       "image": "http://ppyc1910.org/wp-content/uploads/2016/03/J-Farr-pic-3.jpg",
-      "userId": 1
+      "userId": 1,
+      "boatId":1
     },
     {
       "location": "37205",
-      "boatId": 1,
+      "boatId": 2,
       "tripName": "Fun",
       "date": "2020-08-20",
       "image": "https://res.cloudinary.com/dfpncq7pk/image/upload/v1596553230/armada/rxewdk94zkzakh4ehhvx.png",
       "userId": 1,
       "id": 2
+      
     }
   ],
   "maintenances": [
@@ -113,6 +115,13 @@
       "actionNotes": "fdsa",
       "date": "2020-08-18",
       "id": 7
+    },
+    {
+      "action": "Changed Oil",
+      "boatId": 4,
+      "actionNotes": "Put in three fresh quarts",
+      "date": "2020-08-03",
+      "id": 8
     }
   ]
 }

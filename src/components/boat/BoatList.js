@@ -3,11 +3,13 @@ import React, { useState, useEffect } from 'react';
 import BoatCard from './BoatCard';
 import BoatManager from '../../modules/BoatManager';
 import './Boat.css'
+import UserList from '../auth/UserList'
 
 
 const BoatList = (props) => {
     // The initial state is an empty array
     const [boats, setBoats] = useState([]);
+    
 
     const getBoats = () => {
         // After the data comes back from the API, we
@@ -28,13 +30,13 @@ const BoatList = (props) => {
     };
 
     const filterBoats = evt => {
-        sessionStorage.setItem("filter", evt.target.value)
-        BoatManager.getAll().then(setBoats);
+        BoatManager.filterPropulsion(evt.target.value).then(setBoats);
     }
 
     
     return (
         <>
+        <UserList/>
             <select
                 id="propulsion"
                 onChange={filterBoats}
@@ -45,6 +47,7 @@ const BoatList = (props) => {
                 <option value="Paddle">Paddle</option>
                 <option value="Motor">Motor</option>
             </select>
+
 
 
             <section className="section-content">
