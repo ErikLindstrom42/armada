@@ -38,6 +38,7 @@ const BoatList = (props) => {
             <select
                 id="propulsion"
                 onChange={filterBoats}
+                value={sessionStorage.getItem("propulsion")}
             >
                 <option value="">All</option>
                 <option value="Sail">Sail</option>

@@ -24,16 +24,6 @@
       "modelYear": 1995,
       "purchaseYear": "2000",
       "propulsion": "Paddle",
-      "image": "https://res.cloudinary.com/dfpncq7pk/image/upload/v1596128719/armada/q6wj8hcquh1ilszdpd6d.jpg",
-      "userId": 1,
-      "id": 2
-    },
-    {
-      "make": "Sitka",
-      "model": "16",
-      "modelYear": 1995,
-      "purchaseYear": "2000",
-      "propulsion": "Paddle",
       "image": "https://res.cloudinary.com/dfpncq7pk/image/upload/v1596481075/armada/fxw307dirhtdtecivemm.jpg",
       "userId": 1,
       "id": 4
@@ -47,6 +37,26 @@
       "image": "https://res.cloudinary.com/dfpncq7pk/image/upload/v1596486630/armada/ammzov2krapi2hzocc9y.jpg",
       "userId": 1,
       "id": 5
+    },
+    {
+      "make": "Sitka",
+      "model": "501",
+      "modelYear": 1995,
+      "purchaseYear": "2000",
+      "propulsion": "Paddle",
+      "image": "https://res.cloudinary.com/dfpncq7pk/image/upload/v1596487722/armada/byga0xko0hnugiihbgbp.svg",
+      "userId": 1,
+      "id": 6
+    },
+    {
+      "make": "Sitka",
+      "model": "16",
+      "modelYear": 1995,
+      "purchaseYear": "2000",
+      "propulsion": "Motor",
+      "image": "https://res.cloudinary.com/dfpncq7pk/image/upload/v1596553196/armada/sazyk291syeosqgonznt.jpg",
+      "userId": 1,
+      "id": 7
     }
   ],
   "trips": [
@@ -61,11 +71,11 @@
     {
       "location": "37205",
       "boatId": 1,
-      "tripName": "Sailing with enemies",
-      "date": "2020-08-19",
-      "image": "https://res.cloudinary.com/dfpncq7pk/image/upload/v1596483317/armada/pspz3opxm8eq1ppwtrrz.jpg",
+      "tripName": "Fun",
+      "date": "2020-08-20",
+      "image": "https://res.cloudinary.com/dfpncq7pk/image/upload/v1596553230/armada/rxewdk94zkzakh4ehhvx.png",
       "userId": 1,
-      "id": 3
+      "id": 2
     }
   ],
   "maintenances": [
@@ -75,13 +85,6 @@
       "action": "Changed oil",
       "actionNotes": "Refilled w/ 3 qts",
       "date": "2020-01-20"
-    },
-    {
-      "id": 2,
-      "boatId": 2,
-      "action": "Changed oil",
-      "actionNotes": "Refilled w/ 4 qts",
-      "date": "2020-02-20"
     },
     {
       "action": "asdf",
