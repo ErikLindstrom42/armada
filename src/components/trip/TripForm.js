@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import TripManager from '../../modules/TripManager'
+import './Trip.css'
+import BoatManager from '../../modules/BoatManager'
 
 const TripForm = props => {
     const [trip, setTrip] = useState({ location: "", boatId: 1, tripName: "", date: "", image: "", userId: 0 })
     const [isLoading, setIsLoading] = useState(false)
+    const [boats, setBoats] = useState([]);
 
 
     const [image, setImage] = useState('')
@@ -27,8 +30,31 @@ const TripForm = props => {
 
         setImage(file.secure_url)
         setLoading(false)
-        trip.image=file.secure_url
+        trip.image = file.secure_url
     }
+
+
+
+    const getBoats = () => {
+        // After the data comes back from the API, we
+        //  use the setBoats function to update state
+        return BoatManager.getAll().then(boatsFromAPI => {
+            setBoats(boatsFromAPI)
+        });
+    };
+
+    // got the boats from the API on the component's first render
+    useEffect(() => {
+        getBoats()
+    }, []);
+
+    let boatList = boats.map((boat) =>
+        <option key={boat.id} value={boat.id}>{boat.make} {boat.model}</option>
+    )
+
+
+
+
 
     const handleFieldChange = evt => {
         const stateToChange = { ...trip }
@@ -38,6 +64,8 @@ const TripForm = props => {
 
     const currentUserId = sessionStorage.getItem('activeUser')
     trip.userId = parseInt(currentUserId)
+
+
 
     const constructNewTrip = evt => {
         evt.preventDefault()
@@ -72,45 +100,45 @@ const TripForm = props => {
                             id="tripName"
                             placeholder="Adventure Name"
                         />
-                        {/* <input
-                            type="text"
-                            required
-                            onChange={handleFieldChange}
-                            id="date"
-                            placeholder="Date"
-                        />
-                        <label htmlFor="date">Date</label> */}
+
                         <label htmlFor="date">Date</label>
                         <input
                             type="date"
                             id="date"
                             onChange={handleFieldChange} />
-                        <label htmlFor="image">Image URL</label>
+
+                        <select
+                        onChange={handleFieldChange}
+                        required
+                        id="boatId"
+                        >{boatList}</select>
+
                         <div className="pic___upload">
+                            <div className="cloudinaryUpload">
+                                <h1>Upload Image</h1>
+                                <input type="file"
+                                    name="file"
+                                    id="image"
+                                    placeholder="Upload an image"
+                                    onChange={uploadImage}
+                                />
+                                {loading ? (
+                                    <h3>Loading...</h3>
+                                ) : (
+                                        <img src={image} style={{ width: '300px' }} />
+                                    )
 
-                            <h1>Upload Image</h1>
-                            <input type="file"
-                                name="file"
-                                id="image"
-                                placeholder="Upload an image"
-                                onChange={uploadImage}
-                            />
-                            {loading ? (
-                                <h3>Loading...</h3>
-                            ) : (
-                                    <img src={image} style={{ width: '300px' }} />
-                                )
-
-                            }
+                                }
+                            </div>
                         </div>
-                    </div>
 
-                    <div className="alignRight">
-                        <button
-                            type="button"
-                            disabled={isLoading}
-                            onClick={constructNewTrip}
-                        >Submit</button>
+                        <div className="alignRight">
+                            <button
+                                type="button"
+                                disabled={isLoading}
+                                onClick={constructNewTrip}
+                            >Submit</button>
+                        </div>
                     </div>
                 </fieldset>
             </form>

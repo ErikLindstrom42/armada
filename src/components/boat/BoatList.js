@@ -9,7 +9,7 @@ import UserList from '../auth/UserList'
 const BoatList = (props) => {
     // The initial state is an empty array
     const [boats, setBoats] = useState([]);
-    
+
 
     const getBoats = () => {
         // After the data comes back from the API, we
@@ -30,17 +30,21 @@ const BoatList = (props) => {
     };
 
     const filterBoats = evt => {
-        BoatManager.filterPropulsion(evt.target.value).then(setBoats);
+        //If dropdown is empty, show all
+        if (evt.target.value === "") {
+            BoatManager.getAll().then(setBoats)
+        }
+        else BoatManager.filterPropulsion(evt.target.value).then(setBoats);
     }
 
-    
+
     return (
         <>
-        <UserList/>
+            <UserList />
             <select
                 id="propulsion"
                 onChange={filterBoats}
-                value={sessionStorage.getItem("propulsion")}
+
             >
                 <option value="">All</option>
                 <option value="Sail">Sail</option>
