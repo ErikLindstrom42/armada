@@ -1,5 +1,5 @@
 import React from "react";
-import "./MaintenanceCard.css"
+import "./Maintenance.css"
 import { Link } from "react-router-dom"
 
 
@@ -20,7 +20,8 @@ const MaintenanceCard = props => {
 
             </div>
             <div className="maintenanceTitle">
-                <h3>{props.maintenance.date} {props.maintenance.action}</h3>
+                <h4>{props.maintenance.action} </h4>
+                {props.maintenance.date}
                     <p>{props.maintenance.actionNotes}</p>
 
 

@@ -36,7 +36,9 @@ const NavBar = props => {
     }
         </ul>
       </nav>
+
   );
 };
+
 
 export default withRouter(NavBar);

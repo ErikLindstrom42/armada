@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import MaintenanceCard from './MaintenanceCard';
 import MaintenanceManager from '../../modules/MaintenanceManager';
 import MaintenanceForm from './MaintenanceForm';
+import "./Maintenance.css"
 
 
 const MaintenanceList = (props) => {
@@ -32,9 +33,9 @@ const MaintenanceList = (props) => {
                         {...props}
                         getMaintenances={getMaintenances}
                     />
-                    <p></p>
+                    
                 </div>
-                
+                <div className="maintenanceList">
                 {maintenances.map(maintenance =>
 
                     <MaintenanceCard
@@ -43,6 +44,7 @@ const MaintenanceList = (props) => {
                         {...props}
                     />
                 )}
+                </div>
             </div>
 
         </>

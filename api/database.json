@@ -26,18 +26,25 @@
       "user": "Jon",
       "checkPassword": "test",
       "id": 4
+    },
+    {
+      "email": "pyropro11@gmail.com",
+      "password": "test",
+      "user": "Test2",
+      "checkPassword": "test",
+      "id": 5
     }
   ],
   "boats": [
     {
       "id": 1,
-      "userId": 1,
       "make": "Northstar",
       "model": "500",
       "modelYear": "1970",
       "purchaseYear": "1995",
-      "propulsion": "Paddle",
-      "image": "https://images.squarespace-cdn.com/content/v1/5bc258f0e5f7d17e4e005014/1552428149542-5T6EGB2MZ8DGV10XX10Y/ke17ZwdGBToddI8pDm48kBUDAxm-FLUF-OJf9moK1kV7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UT_TXfTUFcrrnRvtinoH4JYxq5g0UB9t65pVePltZrd1IKYY7Qu0iTZQJ-GJ4dsqLQ/northstar-25-electric-conversion-tennessee-full-view-helmsman-electric-drives.JPG"
+      "propulsion": "Sail",
+      "image": "https://images.squarespace-cdn.com/content/v1/5bc258f0e5f7d17e4e005014/1552428149542-5T6EGB2MZ8DGV10XX10Y/ke17ZwdGBToddI8pDm48kBUDAxm-FLUF-OJf9moK1kV7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UT_TXfTUFcrrnRvtinoH4JYxq5g0UB9t65pVePltZrd1IKYY7Qu0iTZQJ-GJ4dsqLQ/northstar-25-electric-conversion-tennessee-full-view-helmsman-electric-drives.JPG",
+      "userId": 1
     },
     {
       "make": "Sitka",
@@ -68,6 +75,16 @@
       "image": "https://res.cloudinary.com/dfpncq7pk/image/upload/v1596553196/armada/sazyk291syeosqgonznt.jpg",
       "userId": 1,
       "id": 7
+    },
+    {
+      "make": "Sitka",
+      "model": "16",
+      "modelYear": 1995,
+      "purchaseYear": "2000",
+      "propulsion": "Sail",
+      "image": "https://res.cloudinary.com/dfpncq7pk/image/upload/v1596737638/armada/bnn5svghlqbpvebwhdkr.png",
+      "userId": 5,
+      "id": 8
     }
   ],
   "trips": [

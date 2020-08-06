@@ -48,8 +48,14 @@ const TripForm = props => {
         getBoats()
     }, []);
 
+    const currentUserId = sessionStorage.getItem('activeUser')
+    trip.userId = parseInt(currentUserId)
+
     let boatList = boats.map((boat) =>
-        <option key={boat.id} value={boat.id}>{boat.make} {boat.model}</option>
+
+        (trip.userId === boat.userId ?
+            <option key={boat.id} value={boat.id}>{boat.make} {boat.model}</option> : null)
+
     )
 
 
@@ -62,8 +68,6 @@ const TripForm = props => {
         setTrip(stateToChange)
     }
 
-    const currentUserId = sessionStorage.getItem('activeUser')
-    trip.userId = parseInt(currentUserId)
 
 
 
@@ -106,12 +110,13 @@ const TripForm = props => {
                             type="date"
                             id="date"
                             onChange={handleFieldChange} />
-
-                        <select
-                        onChange={handleFieldChange}
-                        required
-                        id="boatId"
-                        >{boatList}</select>
+                        <div className="boatSelector">
+                            <select
+                                onChange={handleFieldChange}
+                                required
+                                id="boatId"
+                            >{boatList}</select>
+                        </div>
 
                         <div className="pic___upload">
                             <div className="cloudinaryUpload">

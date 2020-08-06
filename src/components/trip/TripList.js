@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 //import the components we will need
 import TripCard from './TripCard';
 import TripManager from '../../modules/TripManager';
+import Button from 'react-bootstrap/Button'
 
 const TripList = (props) => {
     // The initial state is an empty array
@@ -30,11 +31,11 @@ const TripList = (props) => {
         <>
             
             <section className="section-content">
-                <button type="button"
-                    className="btn"
+                <Button id="tripButton"
+                    
                     onClick={() => { props.history.push("/trips/new") }}>
                     New Trip
-                </button>
+                </Button>
             </section>
             <div className="container-cards">
                 {trips.map(trip => {
