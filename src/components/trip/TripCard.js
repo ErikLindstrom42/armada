@@ -1,7 +1,7 @@
 import React from "react";
 import "./Trip.css"
 import { Link } from 'react-router-dom'
-
+import Button from 'react-bootstrap/Button'
 
 
 const TripCard = props => {
@@ -32,8 +32,8 @@ const TripCard = props => {
                 <div className="trip__description">
                     <p>{props.trip.synopsis}</p>
                 </div>
-                <div>
-                    <Link to={`trips/${props.trip.id}`}><button id="tripDetailsButton">Details</button></Link>
+                <div className="tripDetailButton">
+                    <Link to={`trips/${props.trip.id}`}><Button variant="info" id="tripButton">Details</Button></Link>
 
                 </div>
              

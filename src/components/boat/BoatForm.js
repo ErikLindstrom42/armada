@@ -26,11 +26,11 @@ const BoatForm = props => {
 
         setImage(file.secure_url)
         setLoading(false)
-        boat.image=file.secure_url
+        boat.image = file.secure_url
     }
 
 
-let newBoatId
+    let newBoatId
 
     const handleFieldChange = evt => {
         const stateToChange = { ...boat }
@@ -51,65 +51,74 @@ let newBoatId
 
             BoatManager.post(boat)
                 .then((response) => {
-                    props.history.push("/boats") 
+                    props.history.push("/boats")
                     //Below is to pull ID from response as sample for future projects
-                    newBoatId= response.id
+                    newBoatId = response.id
                     console.log(newBoatId)
-                }  )
+                })
         }
     }
 
     return (
         <>
-        <div className="boatFormContainer">
-            <form>
-        
-                <fieldset>
-                    <div className="formgrid">
-                        <label htmlFor="make">Make</label>
-                        <input
-                            type="text"
-                            required
-                            onChange={handleFieldChange}
-                            id="make"
-                            placeholder="Make"
-                        />
-                        <label htmlFor="model">Model</label>
-                        <input
-                            type="text"
-                            required
-                            onChange={handleFieldChange}
-                            id="model"
-                            placeholder="Model"
-                        />
+            <div className="boatFormContainer">
+                <form>
 
-                        <label htmlFor="modelYear">Year Built</label>
-                        <input
-                            type="text"
-                            required
-                            onChange={handleFieldChange}
-                            id="modelYear"
-                            placeholder="Year Built"
-                        />
-                        <label htmlFor="purchaseYear">Year Bought</label>
-                        <input
-                            type="text"
-                            required
-                            onChange={handleFieldChange}
-                            id="purchaseYear"
-                            placeholder="Year Bought"
-                        />
+                    <fieldset>
+                        <div className="formgrid">
+                            <div>
+                                <label htmlFor="make">Make</label>
+                                <input
+                                    type="text"
+                                    required
+                                    onChange={handleFieldChange}
+                                    id="make"
+                                    placeholder="Make"
+                                />
+                            </div>
+                            <div>
+                                <label htmlFor="model">Model</label>
+                                <input
+                                    type="text"
+                                    required
+                                    onChange={handleFieldChange}
+                                    id="model"
+                                    placeholder="Model"
+                                />
+                            </div>
+                            <div>
+                                <label htmlFor="modelYear">Year Built</label>
+                                <input
+                                    type="text"
+                                    required
+                                    onChange={handleFieldChange}
+                                    id="modelYear"
+                                    placeholder="Year Built"
+                                />
+                            </div>
+                            <div>
+                                <label htmlFor="purchaseYear">Year Bought</label>
 
-                        <label htmlFor="propulsion">Propulsion Type</label>
-                        <select
-                            id="propulsion"
-                            onChange={handleFieldChange}>
-                            <option value="Sail">Sail</option>
-                            <option value="Paddle">Paddle</option>
-                            <option value="Motor">Motor</option>
-                        </select>
+                                <input
+                                    type="text"
+                                    required
+                                    onChange={handleFieldChange}
+                                    id="purchaseYear"
+                                    placeholder="Year Bought"
+                                />
+                            </div>
+                            <div>
+                                <label htmlFor="propulsion">Propulsion Type</label>
+                                <select
+                                    id="propulsion"
+                                    onChange={handleFieldChange}>
+                                    <option value="Sail">Sail</option>
+                                    <option value="Paddle">Paddle</option>
+                                    <option value="Motor">Motor</option>
+                                </select>
+                            </div>
 
-                        {/* <input
+                            {/* <input
                             type="text"
                             required
                             onChange={handleFieldChange}
@@ -117,36 +126,36 @@ let newBoatId
                             placeholder="Image URL"
                         />
                         <label htmlFor="image">Image URL</label> */}
-                        <div className="picUpload">
+                            <div className="picUpload">
 
-                            <h3>Upload Image</h3>
-                            <input type="file"
-                                name="file"
-                                id="image"
-                                placeholder="Upload an image"
-                                onChange={uploadImage}
-                            />
-                            {loading ? (
-                                <h3>Loading...</h3>
-                            ) : (
-                                    <img src={image} style={{ width: '300px' }} alt="Cloudinary Upload"/>
-                                )
+                                <h3>Upload Image</h3>
+                                <input type="file"
+                                    name="file"
+                                    id="image"
+                                    placeholder="Upload an image"
+                                    onChange={uploadImage}
+                                />
+                                {loading ? (
+                                    <h3>Loading...</h3>
+                                ) : (
+                                        <img src={image} style={{ width: '300px' }} alt="Cloudinary Upload" />
+                                    )
 
-                            }
+                                }
+                            </div>
+
                         </div>
 
-                    </div>
+                        <div className="submitBoatButton">
+                            <button
+                                type="button"
+                                disabled={loading}
+                                onClick={constructNewBoat}
+                            >Submit</button>
+                        </div>
+                    </fieldset>
 
-                    <div className="alignRight">
-                        <button
-                            type="button"
-                            disabled={loading}
-                            onClick={constructNewBoat}
-                        >Submit</button>
-                    </div>
-                </fieldset>
-            
-            </form>
+                </form>
             </div>
         </>
     );

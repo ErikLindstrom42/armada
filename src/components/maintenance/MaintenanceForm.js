@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import MaintenanceManager from '../../modules/MaintenanceManager'
 import MaintenanceList from './MaintenanceList'
+import './Maintenance.css'
 
 const MaintenanceForm = props => {
     const [maintenance, setMaintenance] = useState({ action: "", boatId: "", actionNotes: "", date: "", })
@@ -37,7 +38,7 @@ const MaintenanceForm = props => {
             <form id = "maintenanceForm">
                 <fieldset>
                     <div className="formgrid">
-                        <label htmlFor="action">Maintenance Performed</label>
+                        <label htmlFor="action">New Maintenance Action</label>
                         <input
                             type="text"
                             required
@@ -51,20 +52,17 @@ const MaintenanceForm = props => {
                             required
                             onChange={handleFieldChange}
                             id="actionNotes"
-                            placeholder="Details"
                         />
-                        <label htmlFor="date">Date</label>
+                        <label htmlFor="date">Date Performed</label>
                         <input
                             type="date"
                             required
                             onChange={handleFieldChange}
                             id="date"
-                            placeholder="Date"
                         />
-
                     </div>
 
-                    <div className="alignRight">
+                    <div className="maintenanceSubmitButton">
                         <button
                             type="button"
                             disabled={isLoading}

@@ -3,6 +3,7 @@
 
 /*Typography
 --------------------------------------------------------------*/
+
 body,
 button,
 input,
@@ -53,40 +54,92 @@ img {
 .container-cards {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .tripImage {
     display: flex;
     justify-content: space-around;
+    max-height: 300px;
     
 }
 
-
 .detailPic {
-    max-width: 500px;
-    height: auto;
-    display: flex;
-    justify-content: space-around;
-  }
-  
-  .detailView{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+  max-width: 500px;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+}
 
-  
-#tripDetailsButton {
-  background-color: rgb(0,211,211);
+.detailView{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+button {
+  margin-left: 20px;
+  align-items: center;
+}
+
+#tripButton {
+  background-color: #1055A1;
+  color:white;
+    
+}
+
+#tripButton:hover {
+  background-color: rgb(43, 241, 231);
   color: black;
   text-decoration: none;
   
 }
 
-#tripDetailsButton:hover {
-  background-color: rgb(3, 117, 117);
-  color: black;
-  text-decoration: none;
+.tripFormContainer {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
   
+}
+
+.formgrid {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  
+
+}
+
+.picUpload {
+  text-align: center;
+}
+
+label {
+  margin-top: 10px;
+}
+
+.tripDetailButton {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.card {
+  border: 10px white;
+  
+  margin:10px;
+  padding: 10px;
+}
+
+.submitTripButton {
+display:flex;
+justify-content: space-around;
+
+}
+
+
+.boatSelector{
+  margin: 20px;
 }

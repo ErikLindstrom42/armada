@@ -5,10 +5,16 @@
     margin-top: 50px;
 
 }
+
+.loginButton {
+    display: flex;
+    justify-content: space-around;
+}
 input {
     margin-left: 20px;
     margin-right: 20px;
     margin-bottom: 20px;
+    
 }
 
 button {
@@ -32,5 +38,11 @@ button {
 
 .registrationSubmit {
     display: flex;
-    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 100px;
+    
+}
+
+.registrationInput {
+    margin: 20px;
 }

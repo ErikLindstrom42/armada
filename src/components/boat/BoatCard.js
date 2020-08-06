@@ -32,7 +32,7 @@ const BoatCard = props => {
                 <div className="boatDetailButton">
 
 
-                    <Link to={`boats/${props.boat.id}`}><Button variant="info" id="boatButton">Details</Button> {' '}</Link>
+                    <Link to={`boats/${props.boat.id}`}><Button variant="info" id="boatButton">Details</Button></Link>
                 </div>
 
             </div>

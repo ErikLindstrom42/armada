@@ -3,6 +3,7 @@ import BoatManager from '../../modules/BoatManager'
 import { Link } from 'react-router-dom'
 import MaintenanceList from '../maintenance/MaintenanceList'
 import './Boat.css'
+import Button from 'react-bootstrap/Button'
 
 const BoatDetail = props => {
 
@@ -29,13 +30,13 @@ const BoatDetail = props => {
                     <p>{boat.propulsion}boat, purchased in {boat.purchaseYear}.</p>
                     
                 </div>
-                <div className="detailButtons">
+                <div className="boatButton">
                     <Link to={`/boats/${boat.id}/edit`}>
-                        <button>Edit</button>
+                        <Button variant="info" id="boatButton">Edit</Button>
                     </Link>
                     
 
-                    <button type="button" onClick={() => deleteBoat(boat.id)}>Delete</button>
+                    <Button variant="info" id="boatButton" onClick={() => deleteBoat(boat.id)}>Delete</Button>
                     <p></p>
                 </div>
                 <MaintenanceList
