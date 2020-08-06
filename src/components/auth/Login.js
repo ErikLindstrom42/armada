@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import UserManager from "./../../modules/UserManager"
 import { Link } from "react-router-dom";
+import "./Auth.css"
 
 const userName = ""
 const password = ""
@@ -13,7 +14,7 @@ const Login = props => {
     stateToChange[evt.target.id] = evt.target.value;
     setCredentials(stateToChange);
   };
-  
+
   const tryLogin = (e) => {
     e.preventDefault();
     let loginAccepted = false
@@ -27,10 +28,10 @@ const Login = props => {
             props.setUser(credentials)
             props.history.push("/boats")
           }
-          
+
 
         })
-        if(loginAccepted === false) {
+        if (loginAccepted === false) {
           window.alert("Incorrect username or password")
         }
       })
@@ -45,31 +46,34 @@ const Login = props => {
   We can adjust the visualization and functionality as needed */
 
   return (
-    <div>
+    <div className="loginContainer">
       <form onSubmit={tryLogin}>
-        <fieldset>
-          <h3>Please sign in</h3>
-          <div className="formgrid">
-            <input onChange={handleFieldChange} type="userName"
-              id="user"
-              placeholder="Username"
-              required="" autoFocus="" />
-            <label htmlFor="userName">Username</label>
+          <fieldset>
+        <div>
+            <h3>Please sign in</h3>
+            <div className="formgrid">
+              <input onChange={handleFieldChange} type="userName"
+                id="user"
+                placeholder="Username"
+                required="" autoFocus="" />
+              <label htmlFor="userName"></label>
 
-            <input onChange={handleFieldChange} type="password"
-              id="password"
-              placeholder="Password"
-              required="" />
-            <label htmlFor="inputPassword">Password</label>
-          </div>
-          <button type="submit">Sign in</button>
-          <div className="register">New user? &nbsp;
+              <input onChange={handleFieldChange} type="password"
+                id="password"
+                placeholder="Password"
+                required="" />
+              <label htmlFor="inputPassword"></label>
+            </div>
+            <div>
+            <button type="submit">Sign in</button>
+            </div>
+            <div className="register">New user? &nbsp;
       <Link to="/register"> Register a new account </Link>
-      </div>
-        </fieldset>
+            </div>
+        </div>
+          </fieldset>
       </form>
 
-      
     </div>
   );
 };

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import logo from './logo.svg';
 import NavBar from "./nav/NavBar"
 import ApplicationViews from "./ApplicationViews"
 import './Armada.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Armada() {
   const isAuthenticated = () => sessionStorage.getItem("credentials") !== null;

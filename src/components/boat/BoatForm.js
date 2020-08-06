@@ -61,9 +61,12 @@ let newBoatId
 
     return (
         <>
+        <div className="boatFormContainer">
             <form>
+        
                 <fieldset>
                     <div className="formgrid">
+                        <label htmlFor="make">Make</label>
                         <input
                             type="text"
                             required
@@ -71,7 +74,7 @@ let newBoatId
                             id="make"
                             placeholder="Make"
                         />
-                        <label htmlFor="make">Make</label>
+                        <label htmlFor="model">Model</label>
                         <input
                             type="text"
                             required
@@ -79,8 +82,8 @@ let newBoatId
                             id="model"
                             placeholder="Model"
                         />
-                        <label htmlFor="model">Model</label>
 
+                        <label htmlFor="modelYear">Year Built</label>
                         <input
                             type="text"
                             required
@@ -88,7 +91,7 @@ let newBoatId
                             id="modelYear"
                             placeholder="Year Built"
                         />
-                        <label htmlFor="modelYear">Year Built</label>
+                        <label htmlFor="purchaseYear">Year Bought</label>
                         <input
                             type="text"
                             required
@@ -96,8 +99,8 @@ let newBoatId
                             id="purchaseYear"
                             placeholder="Year Bought"
                         />
-                        <label htmlFor="purchaseYear">Year Bought</label>
 
+                        <label htmlFor="propulsion">Propulsion Type</label>
                         <select
                             id="propulsion"
                             onChange={handleFieldChange}>
@@ -106,7 +109,6 @@ let newBoatId
                             <option value="Motor">Motor</option>
                         </select>
 
-                        <label htmlFor="propulsion">Propulsion Type</label>
                         {/* <input
                             type="text"
                             required
@@ -117,7 +119,7 @@ let newBoatId
                         <label htmlFor="image">Image URL</label> */}
                         <div className="picUpload">
 
-                            <h1>Upload Image</h1>
+                            <h3>Upload Image</h3>
                             <input type="file"
                                 name="file"
                                 id="image"
@@ -127,7 +129,7 @@ let newBoatId
                             {loading ? (
                                 <h3>Loading...</h3>
                             ) : (
-                                    <img src={image} style={{ width: '300px' }} />
+                                    <img src={image} style={{ width: '300px' }} alt="Cloudinary Upload"/>
                                 )
 
                             }
@@ -143,7 +145,9 @@ let newBoatId
                         >Submit</button>
                     </div>
                 </fieldset>
+            
             </form>
+            </div>
         </>
     );
 
