@@ -125,7 +125,7 @@ const TripForm = props => {
                                 {loading ? (
                                     <h3>Loading...</h3>
                                 ) : (
-                                        <img src={image} style={{ width: '300px' }} />
+                                        <img src={image} style={{ width: '300px' }} alt="Cloudinary Upload" />
                                     )
 
                                 }

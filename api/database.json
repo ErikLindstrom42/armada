@@ -5,6 +5,27 @@
       "email": "joe@joe.com",
       "password": "test",
       "id": 1
+    },
+    {
+      "email": "pyropro11@gmail.com",
+      "password": "test",
+      "user": "Erik",
+      "checkPassword": "test",
+      "id": 2
+    },
+    {
+      "email": "pyropro11@gmail.com",
+      "password": "test",
+      "user": "Erik",
+      "checkPassword": "test",
+      "id": 3
+    },
+    {
+      "email": "pyropro11@gmail.com",
+      "password": "test",
+      "user": "Jon",
+      "checkPassword": "test",
+      "id": 4
     }
   ],
   "boats": [
@@ -37,16 +58,6 @@
       "image": "https://res.cloudinary.com/dfpncq7pk/image/upload/v1596486630/armada/ammzov2krapi2hzocc9y.jpg",
       "userId": 1,
       "id": 5
-    },
-    {
-      "make": "Sitka",
-      "model": "501",
-      "modelYear": 1995,
-      "purchaseYear": "2000",
-      "propulsion": "Paddle",
-      "image": "https://res.cloudinary.com/dfpncq7pk/image/upload/v1596487722/armada/byga0xko0hnugiihbgbp.svg",
-      "userId": 1,
-      "id": 6
     },
     {
       "make": "Sitka",
@@ -125,6 +136,13 @@
       "actionNotes": "fdsa",
       "date": "2020-06-29",
       "id": 6
+    },
+    {
+      "action": "asdf",
+      "boatId": 2,
+      "actionNotes": "fdsa",
+      "date": "2020-08-21",
+      "id": 7
     }
   ]
 }

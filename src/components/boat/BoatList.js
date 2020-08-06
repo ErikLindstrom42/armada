@@ -4,6 +4,7 @@ import BoatCard from './BoatCard';
 import BoatManager from '../../modules/BoatManager';
 import './Boat.css'
 import UserList from '../auth/UserList'
+import {Button} from 'react-bootstrap'
 
 
 const BoatList = (props) => {
@@ -55,11 +56,11 @@ const BoatList = (props) => {
 
 
             <section className="section-content">
-                <button type="button"
-                    className="btn"
-                    onClick={() => { props.history.push("/boats/new") }}>
-                    New Boat
-                </button>
+
+                <Button 
+                id="boatButton"
+                onClick={() => { props.history.push("/boats/new") }}
+                >New Boat</Button>
             </section>
             <div className="container-cards">
                 {boats.map(boat =>

@@ -1,4 +1,4 @@
-import { Route, Redirect } from "react-router-dom";
+import { Route } from "react-router-dom";
 import React from "react";
 import Home from "./home/Home";
 import TripList from "./trip/TripList";
@@ -23,7 +23,6 @@ import Register from "./auth/Register"
 //const isAuthenticated = () => sessionStorage.getItem("credentials") !== null;
 
 const ApplicationViews = (props) => {
-  const hasUser = props.hasUser;
   const setUser = props.setUser;
   return (
     <React.Fragment>
@@ -111,7 +110,7 @@ const ApplicationViews = (props) => {
           return <MaintenanceList {...props} />
         }} />
 
-<Route
+      <Route
         path="/maintenances/new"
         render={(props) => {
           return <MaintenanceForm {...props} />

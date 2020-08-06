@@ -17,7 +17,7 @@ small {
     font-size: 1.5em;
     color: cornsilk;
     box-sizing: border-box;
-    background-color: #f77f00; 
+    
     list-style-type: none;
   }
    
@@ -32,7 +32,9 @@ small {
       display: flex;
       padding: 0;
       margin-bottom: 10;
-            border: solid  rgb(43, 241, 231);
+      border: solid  rgb(43, 241, 231);
+      border-radius: 50px;
+      width: 50%;
     }
     
     nav .container li {
@@ -41,7 +43,7 @@ small {
       text-align: center;
       font-size: 1.5em;
       box-sizing: border-box;
-      background-color: rgb(0, 211, 211);
+      
       list-style-type: none;
     }
     

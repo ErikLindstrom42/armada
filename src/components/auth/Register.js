@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import UserManager from "./../../modules/UserManager"
+import "./Auth.css"
 
 const Register = props => {
   const [credentials, setCredentials] = useState({ email: "", password: "", user: "", checkPassword: ""});
@@ -15,61 +16,76 @@ const Register = props => {
 
 const handleRegister = evt => {
   evt.preventDefault();
-  if (credentials.user === "" || credentials.email === "" || credentials.password === "" || credentials.checkPassword === "") {
-    window.alert("Please input a username, password, and email");
-  }
 
-    else if (credentials.password !== credentials.checkPassword) {
-      window.alert("Passwords do not match")
+  UserManager.findUserByUsername(credentials.user).then(user => {
+
+
+    if (credentials.user === "" || credentials.email === "" || credentials.password === "" || credentials.checkPassword === "") {
+      window.alert("Please input a username, password, and email");
     }
-   else {
-    
-    
+  
+      else if (credentials.password !== credentials.checkPassword) {
+        window.alert("Passwords do not match")
+      }
+     else if (user.length > 0) {
+       window.alert("Username already exists")
+   
+
+     }
+     else {
+       UserManager.createUser(credentials)
+       .then(() => {
+         sessionStorage.setItem("credentials", JSON.stringify(credentials))
+         props.history.push("/login")
+         window.alert("Registration successful! Please log in")
+     }
+             );
+
+     }
+    }
+  
+  )
     // Create the credentials and redirect user to credentials list
-    UserManager.createUser(credentials)
-    .then(() => {
-      sessionStorage.setItem("credentials", JSON.stringify(credentials))
-      props.history.push("/login")
-}
-          );
     }
-};
+
 
 
   /* This is representing our sign in and registration forms. 
   We can adjust the visualization and functionality as needed */
 
   return (
-    <div>
+    <div className="registrationContainer">
       <form onSubmit={handleRegister}>
         <fieldset>
           <h3>New User? Register an Account</h3>
           <div className="formgrid">
             <input onChange={handleFieldChange} type="email"
               id="email"
-              placeholder="email@...com"
+              placeholder="Email"
               required="" autoFocus="" />
-            <label htmlFor="inputEmail">Email address</label>
+            
 
             <input onChange={handleFieldChange} type="password"
               id="password"
               placeholder="Password"
               required="" />
-            <label htmlFor="password">Password</label>
+            
 
             <input onChange={handleFieldChange} type="password"
               id="checkPassword"
               placeholder="Re-type Password"
               required="" />
-            <label htmlFor="checkPassword">Re-type Password</label>
+            
 
             <input onChange={handleFieldChange} type="userName"
               id="user"
               placeholder="User Name"
               required="" />
-            <label htmlFor="inputUserName">Create Your User Name</label>
+            
           </div>
+          <div className="registrationSubmit">
           <button type="submit">Create Account</button>
+          </div>
         </fieldset>
       </form>
     </div>
