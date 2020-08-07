@@ -51,78 +51,50 @@
       "model": "16",
       "modelYear": 1995,
       "purchaseYear": "2000",
-      "propulsion": "Paddle",
-      "image": "https://res.cloudinary.com/dfpncq7pk/image/upload/v1596481075/armada/fxw307dirhtdtecivemm.jpg",
-      "userId": 1,
-      "id": 2
-    },
-    {
-      "make": "Sitka",
-      "model": "16",
-      "modelYear": 1995,
-      "purchaseYear": "2000",
-      "propulsion": "Sail",
-      "image": "https://res.cloudinary.com/dfpncq7pk/image/upload/v1596486630/armada/ammzov2krapi2hzocc9y.jpg",
-      "userId": 1,
-      "id": 5
-    },
-    {
-      "make": "Sitka",
-      "model": "16",
-      "modelYear": 1995,
-      "purchaseYear": "2000",
-      "propulsion": "Motor",
-      "image": "https://res.cloudinary.com/dfpncq7pk/image/upload/v1596553196/armada/sazyk291syeosqgonznt.jpg",
-      "userId": 1,
-      "id": 7
-    },
-    {
-      "make": "Sitka",
-      "model": "16",
-      "modelYear": 1995,
-      "purchaseYear": "2000",
       "propulsion": "Sail",
       "image": "https://res.cloudinary.com/dfpncq7pk/image/upload/v1596737638/armada/bnn5svghlqbpvebwhdkr.png",
       "userId": 5,
       "id": 8
+    },
+    {
+      "make": "Chris Craft",
+      "model": "Riviera",
+      "modelYear": 1949,
+      "purchaseYear": "1980",
+      "propulsion": "Motor",
+      "image": "https://res.cloudinary.com/dfpncq7pk/image/upload/v1596811882/armada/utzvguhhdmipdrm5pepm.jpg",
+      "userId": 1,
+      "id": 9
+    },
+    {
+      "make": "Sitka",
+      "model": "16",
+      "modelYear": 2005,
+      "purchaseYear": "2005",
+      "propulsion": "Paddle",
+      "image": "https://res.cloudinary.com/dfpncq7pk/image/upload/v1596812092/armada/vawuel1ogqwbbh2j0uqv.jpg",
+      "userId": 1,
+      "id": 10
+    },
+    {
+      "make": "Catalina",
+      "model": "22",
+      "modelYear": 1990,
+      "purchaseYear": "2002",
+      "propulsion": "Sail",
+      "image": "https://res.cloudinary.com/dfpncq7pk/image/upload/v1596812235/armada/pljsosnzia5iazwec2qh.jpg",
+      "userId": 1,
+      "id": 11
     }
   ],
   "trips": [
     {
       "id": 1,
       "location": "Percy Priest Lake",
-      "tripName": "Sailing with enemies",
+      "tripName": "Sailing with friends",
       "date": "2020-07-13",
       "image": "http://ppyc1910.org/wp-content/uploads/2016/03/J-Farr-pic-3.jpg",
-      "userId": 1,
-      "boatId": 1
-    },
-    {
-      "id": 2,
-      "location": "Percy Priest Lake",
-      "tripName": "Sailing with enemies",
-      "date": "2020-07-13",
-      "image": "http://ppyc1910.org/wp-content/uploads/2016/03/J-Farr-pic-3.jpg",
-      "userId": 1,
-      "boatId": 2
-    },
-    {
-      "location": "37205",
-      "boatId": 1,
-      "tripName": "Sailing with enemies",
-      "date": "2020-08-12",
-      "image": "https://res.cloudinary.com/dfpncq7pk/image/upload/v1596572756/armada/lphozopuc6fxftad8nfz.jpg",
-      "userId": 1,
-      "id": 3
-    },
-    {
-      "location": "37205",
-      "boatId": "2",
-      "tripName": "Sailing with enemies",
-      "date": "2020-08-12",
-      "image": "https://res.cloudinary.com/dfpncq7pk/image/upload/v1596574313/armada/igjt6qmsl9itlc52ayep.gif",
-      "userId": 1,
-      "id": 4
+      "userId": 1
     }
   ],
   "maintenances": [
@@ -155,10 +127,10 @@
       "id": 6
     },
     {
-      "action": "asdf",
-      "boatId": 2,
-      "actionNotes": "fdsa",
-      "date": "2020-08-21",
+      "action": "Changed oil again",
+      "boatId": 1,
+      "actionNotes": "Used motor oil this time",
+      "date": "2020-08-25",
       "id": 7
     }
   ]

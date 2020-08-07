@@ -11,3 +11,8 @@
     justify-content: space-around;
     margin-top: 20px;
 }
+
+.maintenanceList {
+    display: flex;
+    flex-direction: column-reverse;
+}
