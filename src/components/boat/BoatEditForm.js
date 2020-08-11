@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import BoatManager from '../../modules/BoatManager'
+import "./Boat.css"
+import Button from 'react-bootstrap/Button'
 
 const BoatEditForm = props => {
     const [boat, setBoat] = useState({ make: "", model: "", modelYear: "", purchaseYear: "", propulsion: "", image: "", userId: 0 })
@@ -46,6 +48,7 @@ const BoatEditForm = props => {
             <form>
                 <fieldset>
                     <div className="formgrid">
+                        <label htmlFor="make">Make</label>
                         <input
                             type="text"
                             required
@@ -53,7 +56,7 @@ const BoatEditForm = props => {
                             id="make"
                             value={boat.make}
                         />
-                        <label htmlFor="make">Make</label>
+                        <label htmlFor="model">Model</label>
                         <input
                             type="text"
                             required
@@ -61,8 +64,8 @@ const BoatEditForm = props => {
                             id="model"
                             value={boat.model}
                         />
-                        <label htmlFor="model">Model</label>
 
+                        <label htmlFor="modelYear">Year Built</label>
                         <input
                             type="text"
                             required
@@ -70,7 +73,8 @@ const BoatEditForm = props => {
                             id="modelYear"
                             value={boat.modelYear}
                         />
-                        <label htmlFor="modelYear">Year Built</label>
+
+                        <label htmlFor="purchaseYear">Year Bought</label>
                         <input
                             type="text"
                             required
@@ -78,7 +82,7 @@ const BoatEditForm = props => {
                             id="purchaseYear"
                             value={boat.purchaseYear}
                         />
-                        <label htmlFor="purchaseYear">Year Bought</label>
+                        <label htmlFor="propulsion">Propulsion Type</label>
                         <select 
                         id="propulsion"
                         value ={boat.propulsion}
@@ -88,7 +92,7 @@ const BoatEditForm = props => {
                             <option value="Motor">Motor</option>
                         </select>
                         
-                        <label htmlFor="propulsion">Propulsion Type</label>
+                        <label htmlFor="image">Image URL</label>
                         <input
                             type="text"
                             required
@@ -96,7 +100,6 @@ const BoatEditForm = props => {
                             id="image"
                             value={boat.image}
                         />
-                        <label htmlFor="image">Image URL</label>
                         <input
                             type="hidden"
                             id="userId"
@@ -104,12 +107,13 @@ const BoatEditForm = props => {
                         />
                     </div>
 
-                    <div className="alignRight">
-                        <button
-                            type="button"
+                    <div className="boatButton">
+                        <Button
+                            variant= "info"
+                            id="boatButton"
                             disabled={isLoading}
                             onClick={updatingExistingBoat}
-                        >Submit</button>
+                        >Submit</Button>
                     </div>
                 </fieldset>
             </form>

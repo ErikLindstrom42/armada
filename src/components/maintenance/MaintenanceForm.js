@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import MaintenanceManager from '../../modules/MaintenanceManager'
 import MaintenanceList from './MaintenanceList'
 import './Maintenance.css'
+import Button from 'react-bootstrap/Button'
 
 const MaintenanceForm = props => {
     const [maintenance, setMaintenance] = useState({ action: "", boatId: "", actionNotes: "", date: "", })
@@ -63,11 +64,12 @@ const MaintenanceForm = props => {
                     </div>
 
                     <div className="maintenanceSubmitButton">
-                        <button
-                            type="button"
+                        <Button
+                            variant="info"
                             disabled={isLoading}
+                            id="maintenanceSubmitButton"
                             onClick={constructNewMaintenance}
-                        >Submit</button>
+                        >Submit</Button>
                     </div>
                 </fieldset>
             </form>

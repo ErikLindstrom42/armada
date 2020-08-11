@@ -24,13 +24,14 @@ const BoatDetail = props => {
     return (
         <>
             <div className="detailView">
-                <div className="detailPic"><img src={boat.image} alt={boat.make}></img></div>
-                <div>
+            <div>
+                <div className="card">
+                <div className="detailPic"><img src={boat.image} alt={boat.make} /></div>
                     <p>{boat.modelYear} {boat.make} {boat.model}</p>
                     <p>{boat.propulsion}boat, purchased in {boat.purchaseYear}.</p>
                     
                 </div>
-                <div className="boatButton">
+                <div className="boatButtons">
                     <Link to={`/boats/${boat.id}/edit`}>
                         <Button variant="info" id="boatButton">Edit</Button>
                     </Link>
@@ -38,6 +39,7 @@ const BoatDetail = props => {
 
                     <Button variant="info" id="boatButton" onClick={() => deleteBoat(boat.id)}>Delete</Button>
                     <p></p>
+                    </div>
                 </div>
                 <MaintenanceList
                     key={boat.id}

@@ -120,7 +120,7 @@ label {
   margin-top: 10px;
 }
 
-.tripDetailButton {
+.tripButton {
   display: flex;
   justify-content: space-around;
   margin-bottom: 20px;
@@ -142,4 +142,13 @@ justify-content: space-around;
 
 .boatSelector{
   margin: 20px;
+}
+
+.tripHeader {
+  display: flex;
+  justify-content: space-around;
+}
+
+.picUpload {
+  text-align: center;
 }

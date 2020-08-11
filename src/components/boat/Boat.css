@@ -87,6 +87,8 @@ button {
 #boatButton {
   background-color: #1055A1;
   color:white;
+  margin:20px;
+
     
 }
 
@@ -121,7 +123,7 @@ label {
   margin-top: 10px;
 }
 
-.boatDetailButton {
+.boatButton {
   display: flex;
   justify-content: center;
   margin-bottom: 20px;

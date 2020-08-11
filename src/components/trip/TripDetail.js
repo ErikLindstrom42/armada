@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import './Trip.css'
 import BoatManager from '../../modules/BoatManager'
 import BoatCard from '../boat/BoatCard'
+import Button from 'react-bootstrap/Button'
 
 const TripDetail = props => {
 
@@ -42,6 +43,7 @@ const TripDetail = props => {
     return (
         <>
             <div className="detailView">
+            <div className="card">
                 <div className="detailPic"><img src={trip.image} alt={trip.tripName}></img></div>
                 <div>
                     <p>{trip.tripName} </p>
@@ -49,10 +51,11 @@ const TripDetail = props => {
                 </div>
                 <div className="detailButtons">
                     <Link to={`/trips/${trip.id}/edit`}>
-                        <button>Edit</button>
+                        <Button variant="info" id="tripButton">Edit</Button>
                     </Link>
-                    <button type="button" onClick={() => deleteTrip(trip.id)}>Delete</button>
+                    <Button variant="info" id="tripButton" onClick={() => deleteTrip(trip.id)}>Delete</Button>
                 </div>
+            </div>
                 <div className="container-cards">
 
                     <BoatCard

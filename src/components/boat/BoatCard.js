@@ -5,11 +5,10 @@ import Button from 'react-bootstrap/Button'
 
 
 
-const BoatCard = props => {
 
+const BoatCard = props => {
     //makes sure that userid is an integer
     const currentUser = parseInt(sessionStorage.getItem("activeUser"))
-
 
     if (props.boat.userId === currentUser) {
 
@@ -29,10 +28,10 @@ const BoatCard = props => {
                     </h3>
                 </div>
 
-                <div className="boatDetailButton">
+                <div className="boatButton">
 
 
-                    <Link to={`boats/${props.boat.id}`}><Button variant="info" id="boatButton">Details</Button></Link>
+                    <Link to={`/boats/${props.boat.id}`}><Button variant="info" id="boatButton">Details</Button></Link>
                 </div>
 
             </div>

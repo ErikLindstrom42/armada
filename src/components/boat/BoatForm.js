@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import BoatManager from '../../modules/BoatManager'
+import Button from 'react-bootstrap/Button'
 
 
 const BoatForm = props => {
@@ -36,6 +37,7 @@ const BoatForm = props => {
         const stateToChange = { ...boat }
         stateToChange[evt.target.id] = evt.target.value
         setBoat(stateToChange)
+        
     }
 
     const currentUserId = sessionStorage.getItem('activeUser')
@@ -146,12 +148,13 @@ const BoatForm = props => {
 
                         </div>
 
-                        <div className="submitBoatButton">
-                            <button
-                                type="button"
+                        <div className="boatButton">
+                            <Button
+                                variant="info"
+                                id="boatButton"
                                 disabled={loading}
                                 onClick={constructNewBoat}
-                            >Submit</button>
+                            >Submit</Button>
                         </div>
                     </fieldset>
 

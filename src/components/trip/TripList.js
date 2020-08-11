@@ -37,6 +37,7 @@ const TripList = (props) => {
                     New Trip
                 </Button>
             </section>
+            <div className="tripHeader"><h1>Captain's Log</h1> </div>
             <div className="container-cards">
                 {trips.map(trip => {
                     if (trip.userId === parseInt(sessionStorage.getItem("activeUser"))) {
