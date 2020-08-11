@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react';
 import TripManager from '../../modules/TripManager'
 import './Trip.css'
 import BoatManager from '../../modules/BoatManager'
+import Button from 'react-bootstrap/Button'
 
 const TripForm = props => {
-    const [trip, setTrip] = useState({ location: "", boatId: 1, tripName: "", date: "", image: "", userId: 0 })
+    const [trip, setTrip] = useState({ location: "", boatId: "", tripName: "", date: "", image: "", userId: 0 })
     const [isLoading, setIsLoading] = useState(false)
     const [boats, setBoats] = useState([]);
 
@@ -57,9 +58,6 @@ const TripForm = props => {
             <option key={boat.id} value={boat.id}>{boat.make} {boat.model}</option> : null)
 
     )
-
-
-
 
 
     const handleFieldChange = evt => {
@@ -118,9 +116,9 @@ const TripForm = props => {
                             >{boatList}</select>
                         </div>
 
-                        <div className="pic___upload">
+                        <div className="picUpload">
                             <div className="cloudinaryUpload">
-                                <h1>Upload Image</h1>
+                                <h3>Upload Image</h3>
                                 <input type="file"
                                     name="file"
                                     id="image"
@@ -137,12 +135,13 @@ const TripForm = props => {
                             </div>
                         </div>
 
-                        <div className="alignRight">
-                            <button
-                                type="button"
+                        <div className="tripButton">
+                            <Button
+                                variant="info"
                                 disabled={isLoading}
+                                id="tripButton"
                                 onClick={constructNewTrip}
-                            >Submit</button>
+                            >Submit</Button>
                         </div>
                     </div>
                 </fieldset>

@@ -32,7 +32,7 @@ const TripCard = props => {
                 <div className="trip__description">
                     <p>{props.trip.synopsis}</p>
                 </div>
-                <div className="tripDetailButton">
+                <div className="tripButton">
                     <Link to={`trips/${props.trip.id}`}><Button variant="info" id="tripButton">Details</Button></Link>
 
                 </div>
