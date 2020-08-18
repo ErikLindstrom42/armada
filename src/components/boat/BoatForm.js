@@ -120,14 +120,6 @@ const BoatForm = props => {
                                 </select>
                             </div>
 
-                            {/* <input
-                            type="text"
-                            required
-                            onChange={handleFieldChange}
-                            id="image"
-                            placeholder="Image URL"
-                        />
-                        <label htmlFor="image">Image URL</label> */}
                             <div className="picUpload">
 
                                 <h3>Upload Image</h3>
