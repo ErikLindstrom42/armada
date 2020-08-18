@@ -88,9 +88,7 @@ button {
   background-color: #1055A1;
   color:white;
   margin:20px;
-
-    
-}
+  }
 
 #boatButton:hover {
   background-color: rgb(43, 241, 231);
@@ -139,5 +137,10 @@ label {
 .submitBoatButton {
 display:flex;
 justify-content: space-around;
+
+}
+
+.boatButton {
+bottom:0;
 
 }
