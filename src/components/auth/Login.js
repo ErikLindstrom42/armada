@@ -14,7 +14,7 @@ const Login = props => {
     stateToChange[evt.target.id] = evt.target.value;
     setCredentials(stateToChange);
   };
-
+  sessionStorage.setItem("activeUser", 1)
   const tryLogin = (e) => {
     e.preventDefault();
     let loginAccepted = false

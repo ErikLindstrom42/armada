@@ -12,6 +12,27 @@
       "user": "Erik",
       "checkPassword": "test",
       "id": 2
+    },
+    {
+      "email": "pyropro11@gmail.com",
+      "password": "test",
+      "user": "Erik",
+      "checkPassword": "test",
+      "id": 3
+    },
+    {
+      "email": "pyropro11@gmail.com",
+      "password": "test",
+      "user": "Jon",
+      "checkPassword": "test",
+      "id": 4
+    },
+    {
+      "email": "pyropro11@gmail.com",
+      "password": "test",
+      "user": "Test2",
+      "checkPassword": "test",
+      "id": 5
     }
   ],
   "boats": [
@@ -24,6 +45,16 @@
       "propulsion": "Sail",
       "image": "https://images.squarespace-cdn.com/content/v1/5bc258f0e5f7d17e4e005014/1552428149542-5T6EGB2MZ8DGV10XX10Y/ke17ZwdGBToddI8pDm48kBUDAxm-FLUF-OJf9moK1kV7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UT_TXfTUFcrrnRvtinoH4JYxq5g0UB9t65pVePltZrd1IKYY7Qu0iTZQJ-GJ4dsqLQ/northstar-25-electric-conversion-tennessee-full-view-helmsman-electric-drives.JPG",
       "userId": 1
+    },
+    {
+      "make": "Sitka",
+      "model": "16",
+      "modelYear": 1995,
+      "purchaseYear": "2000",
+      "propulsion": "Sail",
+      "image": "https://res.cloudinary.com/dfpncq7pk/image/upload/v1596737638/armada/bnn5svghlqbpvebwhdkr.png",
+      "userId": 5,
+      "id": 8
     },
     {
       "make": "Chris Craft",
@@ -54,54 +85,26 @@
       "image": "https://res.cloudinary.com/dfpncq7pk/image/upload/v1596812235/armada/pljsosnzia5iazwec2qh.jpg",
       "userId": 1,
       "id": 11
-    },
-    {
-      "make": "Sitka",
-      "model": "16",
-      "modelYear": 1995,
-      "purchaseYear": "2000",
-      "propulsion": "Paddle",
-      "image": "https://res.cloudinary.com/dfpncq7pk/image/upload/v1596818458/armada/nq5xbl11bipa4qjanrnd.jpg",
-      "userId": 2,
-      "id": 12
     }
   ],
   "trips": [
     {
-      "location": "37205",
-      "boatId": 1,
-      "tripName": "Sailing with enemies",
-      "date": "2020-08-13",
-      "image": "https://res.cloudinary.com/dfpncq7pk/image/upload/v1596818515/armada/nmh61otjolqtzlmft0s4.jpg",
-      "userId": 2,
-      "id": 2
-    },
-    {
-      "id": 3,
+      "id": 1,
       "location": "Percy Priest Lake",
-      "boatId": 1,
-      "tripName": "Sailing with enemies",
-      "date": "2020-08-13",
-      "image": "https://res.cloudinary.com/dfpncq7pk/image/upload/v1597159150/armada/tr2jmnxcbyqqwuj5tere.jpg",
+      "tripName": "Sailing with friends",
+      "boatId": "1",
+      "date": "2020-07-13",
+      "image": "http://ppyc1910.org/wp-content/uploads/2016/03/J-Farr-pic-3.jpg",
       "userId": 1
     },
     {
       "location": "37205",
-      "boatId": "11",
+      "boatId": "9",
       "tripName": "Sailing with enemies",
-      "date": "2020-08-05",
-      "image": "https://res.cloudinary.com/dfpncq7pk/image/upload/v1597173769/armada/pho8dkt6fprlax7tlxn8.jpg",
+      "date": "2020-08-21",
+      "image": "https://res.cloudinary.com/dfpncq7pk/image/upload/v1596812727/armada/u9mytrs4iew6hw4s0yin.jpg",
       "userId": 1,
-      "id": 4
-    },
-    {
-      "location": "37205",
-      "boatId": "10",
-      "tripName": "Sailing with enemies",
-      "date": "2020-08-12",
-      "image": "https://res.cloudinary.com/dfpncq7pk/image/upload/v1597175402/armada/totuuhajyv2dcgcdojpy.jpg",
-      "userId": 1,
-      "id": 5
+      "id": 2
     }
   ],
   "maintenances": [
@@ -118,13 +121,6 @@
       "actionNotes": "Used motor oil this time",
       "date": "2020-08-25",
       "id": 7
-    },
-    {
-      "action": "Washed",
-      "boatId": 12,
-      "actionNotes": "with soap",
-      "date": "2020-08-20",
-      "id": 8
     }
   ]
 }
